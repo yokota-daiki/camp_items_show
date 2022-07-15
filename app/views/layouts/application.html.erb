@@ -17,7 +17,12 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <%= render 'shared/flash_message' %>
-    <%= yield %>
+    <div class="content-wrapper">
+      <%= render 'shared/flash_message' %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+    <%= render 'shared/sidebar' %>
+
   </body>
 </html>
