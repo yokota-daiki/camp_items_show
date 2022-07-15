@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     register: '登録'
+    post: '投稿'
     message:
       require_login: 'ログインしてください'
   users:
@@ -20,3 +21,9 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  posts:
+    new:
+      title: 'キャンプ記録'
+    create:
+      success: '投稿しました'
+      fail: '投稿に失敗しました'
