@@ -1,10 +1,10 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1><%= "CAMPER's" %></h1>
-    <div class='text-center'>
-      <% unless logged_in? %>
-        <%= link_to  "ユーザー登録をする", new_user_path %>
-      <% end %>
-    </div>
+<div class="content-header">
+  <div class="container-fluid">
+    <h1 class="text-center">CAMPER'sとは</h1>
+    <% unless logged_in? %>
+      <div class="text-center">
+        <%= link_to "ユーザー登録をする", new_user_path%>
+      </div>
+    <% end %>
   </div>
 </div>
