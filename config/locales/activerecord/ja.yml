@@ -4,6 +4,10 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    post:
+      public:
+        true: '公開'
+        false: '非公開'
   activerecord:
     models:
       user: 'ユーザー'
