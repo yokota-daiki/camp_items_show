@@ -16,6 +16,10 @@
           <%= f.text_area :comment, class: "form-control" %>
         </div>
         <div class="form-group">
+          <%= f.label :images %>
+          <%= f.file_field :images, direct_upload: true, multiple: true %>
+        </div>
+        <div class="form-group">
           <%= f.radio_button :public, :true %>
           <%= f.label :public, "公開する" %>
           <%= f.radio_button :public, :false %>
