@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   
   def index
+    @posts = Post.where(public: true)
   end
 
   def new
@@ -17,7 +18,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

@@ -1,2 +1,14 @@
-<h1>Posts#index</h1>
-<%= link_to "キャンプの記録を投稿する", new_post_path %>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="text-center">
+      <%= link_to "キャンプの記録を投稿する", new_post_path %>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <%= render @posts %>
+    </div>
+  </div>
+</div>
