@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   validates :camp_field, presence: true
   validates :camped_date, presence: true
   validates :public, inclusion: [true, false]
+
+  has_many_attached :images
 end
