@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with model: @post, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :camp_field %>
+          <%= f.text_field :camp_field, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :camped_date %>
+          <%= f.date_field :camped_date, class: "form-control" %> 
+        </div>
+        <div class="form-group">
+          <%= f.label :comment %>
+          <%= f.text_area :comment, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.radio_button :public, :true %>
+          <%= f.label :public, "公開する" %>
+          <%= f.radio_button :public, :false %>
+          <%= f.label :public, "非公開" %>
+        </div>
+        <%= f.submit (t "defaults.post"), class: "btn btn-primary" %>
+      <% end %>
+      <div class='text-center'>
+      </div>
+    </div>
+  </div>
+</div>

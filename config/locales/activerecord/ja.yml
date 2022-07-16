@@ -4,9 +4,14 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    post:
+      public:
+        true: '公開'
+        false: '非公開'
   activerecord:
     models:
       user: 'ユーザー'
+      post: 'キャンプ記録'
     attributes:
       user:
         id: 'ID'
@@ -15,3 +20,9 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         role: '権限'
+      post:
+        user_id: 'ユーザー'
+        camp_field: '訪れたキャンプ場'
+        public: 公開情報
+        comment: 'コメント'
+        camped_date: '日付'

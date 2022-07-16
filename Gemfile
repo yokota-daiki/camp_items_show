@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'byebug', platforms: %i[mri mingw x64_mingw]
+gem 'enum_help'
 gem 'sorcery'
 gem "jquery-rails"
 gem 'net-imap'
