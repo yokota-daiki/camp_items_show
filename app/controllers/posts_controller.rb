@@ -33,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:camp_field, :comment, :public, :camped_date)
+    params.require(:post).permit(:camp_field, :comment, :public, :camped_date, images: [])
   end
 end
