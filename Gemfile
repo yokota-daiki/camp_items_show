@@ -29,7 +29,6 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'bootstrap', '~> 4.3.1'
-gem 'byebug', platforms: %i[mri mingw x64_mingw]
 gem 'enum_help'
 gem 'sorcery'
 gem "jquery-rails"
@@ -40,7 +39,7 @@ gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
@@ -56,7 +55,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
   gem 'bullet'
   gem 'rubocop'
   gem 'rubocop-rails'
