@@ -1,2 +1,33 @@
-<h1>Items#search</h1>
-<p>Find me in app/views/items/search.html.erb</p>
+<div class="container">
+  <div class="content-header">
+    <h1 class="text-center"><%= t '.title' %></h1>
+    <div class="search-field">
+      <%= form_with url: search_items_path, method: :get, local: true do |f| %>
+        <div class="input-group">
+          <%= f.search_field :keyword, class: "form-control", placeholder: "アイテム名を検索" %>
+          <div class="input-group-append">
+            <%= f.submit "検索", class: "form-control btn btn-success" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="content">
+      <div class="content-fluid">
+        <div class="row">
+          <% if @items.present? %>
+            <% @items.first(8).each do |item| %>
+              <div class="col-lg-3">
+                <div class="card">
+                  <div class="card-body">
+                    <%= item["itemName"] %>
+                    <%= link_to item["itemUrl"], item["itemUrl"] %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
