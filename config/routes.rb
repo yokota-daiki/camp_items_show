@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :checklists
   resources :items do
     collection do
-      get "search"
+      get "search", to: "search_items#search"
     end
   end
   get "login",     to: "user_sessions#new"

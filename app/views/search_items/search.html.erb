@@ -15,7 +15,7 @@
   <div class="content">
     <div class="row">
       <% if @items.present? %>
-        <%= render @items %>
+        <%= render partial: 'item', collection: @items %>
       <% end %>
     </div>
   </div>
