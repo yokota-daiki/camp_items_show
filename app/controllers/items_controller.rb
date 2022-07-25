@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @keyword = params[:keyword]
     @items = []
     if @keyword.present?
-      @results = RakutenWebService::Ichiba::Item.search(keyword: @keyword)
+      @results = RakutenWebService::Ichiba::Product.search(keyword: @keyword, genreId: 101975)
       @results.each do |result|
         item = Item.new(read(result))
         @items << item
@@ -19,14 +19,17 @@ class ItemsController < ApplicationController
   end
 
   def create
+    
   end
 
   private
 
   def read(result)
-    name = result["itemName"]
-    url = result["itemUrl"]
-    image_url = result["smallImageUrls"][0]
-    {name: name, url: url, image_url: image_url}
+    name = result["productName"]
+    url = result["productUrlPC"]
+    image_url = result["mediumImageUrl"]
+    maker = result["makerName"]
+    category = result["genreName"]
+    {name: name, url: url, image_url: image_url, maker: maker, category: category}
   end
 end

@@ -1,9 +1,16 @@
-<div class="col-lg-3">
+<div class="col-lg-4">
   <div class="card">
     <div class="card-body">
-      <%= image_tag item.image_url %>
-      <%= item.name %>
-      <%= link_to item.url, item.url %>
+      <div class="image-area">
+        <%= image_tag item.image_url %>
+      </div>
+      <%= item.category %></br>
+      <%= item.maker %></br>
+      <%= item.name[0..20] ... %>
+        <div class="menu">
+          <%= button_to "登録", action: "create", confirm: "登録しますか" %>
+          <%= link_to "楽天でみる", item.url %>
+        </div>
     </div>
   </div>
 </div>

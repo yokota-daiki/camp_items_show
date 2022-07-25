@@ -22,8 +22,17 @@ ja:
     destroy:
       success: 'ログアウトしました'
   posts:
+    index:
+      title: 'みんなのキャンプ'
     new:
       title: 'キャンプ記録'
     create:
       success: '投稿しました'
       fail: '投稿に失敗しました'
+  items:
+    index:
+      title: 'マイアイテム'
+    search:
+      title: 'アイテム検索'
+
+
