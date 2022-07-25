@@ -1,0 +1,15 @@
+<div class="col-lg-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="image-area">
+        <%= image_tag item.image_url %>
+      </div>
+      <%= item.category %></br>
+      <%= item.maker %></br>
+      <%= item.name[0..20] ... %>
+        <div class="menu">
+          <%= link_to "楽天でみる", item.url %>
+        </div>
+    </div>
+  </div>
+</div>

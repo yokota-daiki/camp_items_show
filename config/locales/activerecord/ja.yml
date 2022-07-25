@@ -27,3 +27,9 @@ ja:
         comment: 'コメント'
         camped_date: '日付'
         images: '画像'
+      item:
+        name: 'アイテム名'
+        maker: 'メーカー'
+        item_image: '画像'
+        url: 'URL'
+        category: 'カテゴリー'

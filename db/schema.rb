@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_21_064152) do
+ActiveRecord::Schema.define(version: 2022_07_25_090047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,26 @@ ActiveRecord::Schema.define(version: 2022_07_21_064152) do
     t.index ["user_id"], name: "index_checklists_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "url"
+    t.string "maker"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
+    t.string "category"
+  end
+
+  create_table "myitems", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_myitems_on_item_id"
+    t.index ["user_id", "item_id"], name: "index_myitems_on_user_id_and_item_id", unique: true
+    t.index ["user_id"], name: "index_myitems_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "camp_field", null: false
@@ -76,5 +96,7 @@ ActiveRecord::Schema.define(version: 2022_07_21_064152) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "checklists", "users"
+  add_foreign_key "myitems", "items"
+  add_foreign_key "myitems", "users"
   add_foreign_key "posts", "users"
 end
