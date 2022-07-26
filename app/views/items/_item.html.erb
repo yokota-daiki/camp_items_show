@@ -15,9 +15,7 @@
         <% if item.url %>
           <%= link_to "楽天でみる", item.url %>
         <% end %>
-        <% unless current_user.item_added?(item) %>  
-          <%= link_to "登録", myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category}), controller: 'myitems', action: 'create', method: :post, name: item %>
-        <% end %>
+        <%= link_to "削除", myitem_path(item), controller: 'myitems', method: :delete %>
       </div>
     </div>
   </div>

@@ -44,5 +44,7 @@ ja:
     create:
       success: 'アイテムを登録しました'
       fail: 'アイテムが登録できませんでした'
+    destroy:
+      success: 'アイテムを削除しました'
 
 
