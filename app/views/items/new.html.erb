@@ -1,2 +1,74 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with model: @item, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :maker %>
+          <%= f.text_field :maker, class: "form-control" %> 
+        </div>
+        <div class="form-group">
+          <%= f.label :category %>
+          <%= f.text_field :category, class: "form-control" %>
+        </div>
+          <div class="form-group">
+            <div class="preview-box border rounded col-md-12">
+              <%= f.label :image %>
+              <i class="far fa-images fa-lg"></i>
+              <%= f.file_field :image, id: :camp_image, accept: '.jpeg, .jpg, .png', onchange: "previewImage(this);" %>
+            </div>
+            <div class="alert alert-warning mt-3" style="display:none;">
+            </div>
+            <div class="contain">
+              <div class="image_box row" id='image-box__container'></div>
+              <p class="btn btn-outline-light" id="preview-delete" style="display: none;">選択をクリア</p>
+            </div>
+          </div>
+        <%= f.submit (t "defaults.post"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var image_box = $('#image-box__container');
+var number_of_added_images = $('.added-image').length;
+var submit_button = $('.submit-button');
+var alert_message = $('.alert-warning');
+
+  function previewImage(obj){
+  $('#preview-delete').show();
+  //画像が選択されていれば、プレビューを削除する
+  var target_image = $('.each-image-preview');
+      target_image.remove();
+  var number_of_add_images = 0;
+
+  //選択された画像をプレビューで表示
+	for (i = 0; i < obj.files.length; i++) {
+		var fileReader = new FileReader();
+		fileReader.onload = (function (e) {
+      var html = `<div class="col-md-4 each-image-preview">
+                    <img src="${e.target.result}" style="max-width:100%; max-height:750px;">
+                  </div>`;
+      image_box.append(html);
+		});
+		fileReader.readAsDataURL(obj.files[i]);
+    number_of_add_images += 1;
+	};
+
+    //画像の合計枚数を確認
+    console.log(number_of_add_images);
+    if (number_of_add_images > 5) {
+      console.log("画像は合計5枚以下としてください");
+      alert_message.fadeIn(300);
+      submit_button.prop("disabled", true);
+    } else {
+      submit_button.prop("disabled", false);
+    };
+};
+</script>

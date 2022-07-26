@@ -5,11 +5,13 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
+      current_user.add_item(@item)
       redirect_to items_path, success: t('.success')
     else
       render :search
@@ -19,6 +21,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :url, :image_url, :maker, :category)
+    params.require(:item).permit(:name, :maker, :category, :image)
   end
 end
