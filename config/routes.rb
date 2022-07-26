@@ -4,12 +4,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :checklists
   resources :items 
-  resource :search_item, only: %i[create] do
-    collection do
-      get :search
-    end
-  end
-  post "search_items", to: "search_items#create"
+  resources :myitems, only: %i[create destroy]
+  get "search_items", to: "search_items#search"
   get "login",         to: "user_sessions#new"
   post "login",        to: "user_sessions#create"
   delete "logout",     to: "user_sessions#destroy"
