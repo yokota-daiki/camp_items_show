@@ -2,7 +2,7 @@
   <div class="content-header">
     <h1 class="text-center"><%= t '.title' %></h1>
     <div class="search-field">
-      <%= form_with url: search_items_path, method: :get, local: true do |f| %>
+      <%= form_with url: search_search_item_path, method: :get, local: true do |f| %>
         <div class="input-group">
           <%= f.search_field :keyword, class: "form-control", placeholder: "メーカー名 アイテム名で検索" %>
           <div class="input-group-append">

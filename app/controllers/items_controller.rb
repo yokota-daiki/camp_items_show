@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = current_user.myitem_items
   end
 
   def new
@@ -18,6 +19,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).premit(:name, :url, :image_url, :maker, :category)
+    params.require(:item).permit(:name, :url, :image_url, :maker, :category)
   end
 end

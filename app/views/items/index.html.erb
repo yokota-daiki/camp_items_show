@@ -2,7 +2,14 @@
   <div class="content-header">
     <div class="text-center">
       <h1><%= t '.title' %></h1>
-      <%= link_to "アイテムを登録する", search_items_path %>
+      <%= link_to "アイテムを登録する", search_search_item_path %>
+    </div>
+    <div class="content">
+      <div class="row">
+        <% if @items.present? %>
+          <%= render partial: 'item', collection: @items %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

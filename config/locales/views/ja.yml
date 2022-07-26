@@ -32,7 +32,11 @@ ja:
   items:
     index:
       title: 'マイアイテム'
+  search_items:
     search:
       title: 'アイテム検索'
+    create:
+      success: 'アイテムを登録しました'
+      fail: 'アイテムが登録できませんでした'
 
 

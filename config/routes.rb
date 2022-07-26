@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create update]
   resources :posts
   resources :checklists
-  resources :items do
+  resources :items 
+  resource :search_item, only: %i[create] do
     collection do
-      get "search", to: "search_items#search"
+      get :search
     end
   end
-  get "login",     to: "user_sessions#new"
-  post "login",    to: "user_sessions#create"
-  delete "logout", to: "user_sessions#destroy"
+  post "search_items", to: "search_items#create"
+  get "login",         to: "user_sessions#new"
+  post "login",        to: "user_sessions#create"
+  delete "logout",     to: "user_sessions#destroy"
 end
