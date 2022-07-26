@@ -1,0 +1,22 @@
+<div class="col-lg-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="image-area">
+        <% if item.image_url.present? %>
+          <%= image_tag item.image_url %>
+        <% elsif item.image.present? %>
+          <%= image_tag item.image, size: '150x130' %>
+        <% end %>
+      </div>
+      <%= item.category %></br>
+      <%= item.maker %></br>
+      <%= item.name[0..20] ... %>
+      <div class="menu">
+        <% if item.url %>
+          <%= link_to "楽天でみる", item.url %>
+        <% end %>
+        <%= link_to "削除", myitem_path(item), controller: 'myitems', method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

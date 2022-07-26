@@ -22,5 +22,4 @@ class SearchItemsController < ApplicationController
     category = result["genreName"]
     {name: name, url: url, image_url: image_url, maker: maker, category: category}
   end
-  
 end
