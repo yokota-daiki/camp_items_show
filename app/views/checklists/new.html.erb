@@ -1,2 +1,33 @@
-<h1>Checklists#new</h1>
-<p>Find me in app/views/checklists/new.html.erb</p>
+<div class="container">
+  <div class="content-header">
+    <div class="text-center">
+      <h1><%= t '.title' %></h1>
+    </div>
+  </div>
+  <div class="content">
+    <%= form_with model: @checklist, local: true do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, class: 'form-control', placeholder: "チェックリストの名前を記入してください (例) ソロキャンプ 夏" %>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">アイテム名</th>
+            <th scope="col">登録</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @myitems.each do |myitem| %>
+            <tr>
+              <td><%= image_tag myitem.image_url %></td>
+              <td><%= myitem.name %></td>
+              <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, { include_hidden: false }, { style: 'transform: scale(2)' }) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= f.submit (t "defaults.create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

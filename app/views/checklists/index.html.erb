@@ -1,2 +1,22 @@
-<h1>Checklists#index</h1>
-<p>Find me in app/views/checklists/index.html.erb</p>
+<div class="container">
+  <div class="content-header">
+    <div class="text-center">
+      <h1><%= t '.title' %></h1>
+      <%= link_to "チェックリストを作成する", new_checklist_path %>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">チェックリスト名</th>
+        <th scope="col">アイテム数</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @checklists.present? %>
+        <%= render @checklists %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
