@@ -1,6 +1,6 @@
 class ChecklistsController < ApplicationController
   before_action :set_myitems, only: %i[new edit]
-  before_action :set_checklist, only: %i[edit update]
+  before_action :set_checklist, only: %i[edit update destroy]
 
   def new
     @checklist = current_user.checklists.new
@@ -20,7 +20,7 @@ class ChecklistsController < ApplicationController
   end
 
   def index
-    @checklists = current_user.checklists.all
+    @checklists = current_user.checklists.order(created_at: :asc)
   end
 
   def show
@@ -31,8 +31,7 @@ class ChecklistsController < ApplicationController
   end
 
   def update
-    #byebug
-    if @checklist.update!(name: params[:checklist][:name])
+    if @checklist.update!(checklist_params)
       item_ids = params[:checklist_item][:item_id]
       item_ids.each do |id|
         unless @checklist.item_ids.include?(id)
@@ -43,6 +42,11 @@ class ChecklistsController < ApplicationController
     else
       redirect_to edit_checklist_path(@checklist), danger: t('.fail')
     end
+  end
+
+  def destroy
+    @checklist.destroy!
+    redirect_to checklists_path, success: t('.success')
   end
 
   private

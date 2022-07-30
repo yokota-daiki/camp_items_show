@@ -56,5 +56,8 @@ ja:
       fail: 'チェックリストは作成できませんでした'
     edit:
       title: '%{title}'
+    update:
+      success: 'チェックリストを更新しました'
+      fail: 'チェックリストが更新できませんでした'
 
 
