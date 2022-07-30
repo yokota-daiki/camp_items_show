@@ -34,3 +34,5 @@ ja:
         url: 'URL'
         category: 'カテゴリー'
         image: 'アイテム画像'
+      checklist:
+        name: 'チェックリスト名'

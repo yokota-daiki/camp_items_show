@@ -1,0 +1,6 @@
+<tr>
+  <td><%= checklist.name %></td>
+  <td><%= checklist.items.size %></td>
+  <td><%= button_to '編集', edit_checklist_path(checklist), method: :get, class: "btn btn-info rounded-pill" %></td>
+  <td><%= button_to '削除', checklist_path(checklist), method: :delete, data: { confirm: '削除しますか' }, class: "btn btn-info rounded-pill" %></td>
+</tr>

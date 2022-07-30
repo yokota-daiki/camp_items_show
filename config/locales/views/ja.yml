@@ -4,6 +4,7 @@ ja:
     logout: 'ログアウト'
     register: '登録'
     post: '投稿'
+    create: '作成'
     message:
       require_login: 'ログインしてください'
   users:
@@ -45,6 +46,18 @@ ja:
       success: 'アイテムを登録しました'
       fail: 'アイテムが登録できませんでした'
     destroy:
-      success: 'アイテムを削除しました'
+  checklists:
+    index:
+      title: 'チェックリスト一覧'
+    new:
+      title: '新規チェックリスト'
+    create:
+      success: 'チェックリスト"%{name}"を作成しました'
+      fail: 'チェックリストは作成できませんでした'
+    edit:
+      title: '%{title}'
+    update:
+      success: 'チェックリストを更新しました'
+      fail: 'チェックリストが更新できませんでした'
 
 
