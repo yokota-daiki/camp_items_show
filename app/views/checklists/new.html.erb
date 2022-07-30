@@ -13,18 +13,12 @@
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col">アイテム名</th>
-            <th scope="col">登録</th>
+            <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+            <th scope="col"><%= t('defaults.register') %></th>
           </tr>
         </thead>
         <tbody>
-          <% @myitems.each do |myitem| %>
-            <tr>
-              <td><%= image_tag myitem.image_url %></td>
-              <td><%= myitem.name %></td>
-              <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, { include_hidden: false }, { style: 'transform: scale(2)' }) %></td>
-            </tr>
-          <% end %>
+          <%= render partial: 'myitem', collection: @myitems %>
         </tbody>
       </table>
       <%= f.submit (t "defaults.create"), class: "btn btn-primary" %>

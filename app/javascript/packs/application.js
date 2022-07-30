@@ -13,4 +13,3 @@ import "admin-lte"
 Rails.start()
 ActiveStorage.start()
 
-

@@ -1,5 +1,5 @@
 <tr>
   <td><%= checklist.name %></td>
   <td><%= checklist.items.size %></td>
-  <td></td>
+  <td><%= button_to '編集', edit_checklist_path(checklist), method: :get %></td>
 </tr>

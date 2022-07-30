@@ -1,2 +1,26 @@
-<h1>Checklists#edit</h1>
-<p>Find me in app/views/checklists/edit.html.erb</p>
+<div class="container">
+  <div class="content-header">
+    <div class="text-center">
+    <%= form_with model: @checklist, local: true do |f| %>
+      <%= f.text_field :name, class: "form-control" %>
+      <div class="form-area"></div>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= t('defaults.register') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'myitem', collection: @myitems, locals: { checklist: @checklist } %>
+      </tbody>
+    </table>
+      <%= f.submit t('defaults.register'),  class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
