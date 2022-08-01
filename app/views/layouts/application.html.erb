@@ -10,8 +10,8 @@
     <%= javascript_pack_tag 'application' %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap"></script>
   </head>
-
   <body class="sidebar-mini sidebar-collapse">
     <% if logged_in? %>
       <%= render 'shared/header' %>
