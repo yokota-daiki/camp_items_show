@@ -29,7 +29,9 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'dotenv-rails'
 gem 'enum_help'
+gem 'google_places'
 gem 'sorcery'
 gem "jquery-rails"
 gem 'net-imap'
