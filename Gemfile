@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'dotenv-rails'
 gem 'enum_help'
+gem 'geocoder'
+gem 'gon'
 gem 'google_places'
 gem 'sorcery'
 gem "jquery-rails"
