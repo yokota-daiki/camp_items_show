@@ -5,9 +5,10 @@ class SearchCampsController < ApplicationController
   def search
     @camp_fields = []
     keyword = params[:keyword]
+    
     if keyword.present?
       client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
-      results = client.spots_by_query(params[:keyword], types: 'campground', detail: true, radius: 200000)
+      results = client.spots_by_query(params[:keyword], types: 'campground', detail: true)
       results.each do |result|
         camp_field = CampField.new(read(result))
         @camp_fields << camp_field

@@ -7,17 +7,19 @@
           <%= f.text_field :keyword %>
           <%= f.submit t('defaults.search') %>
         <% end %>
-        <div id="map"></div>
       </div>
     </div>
   </div>
+  <div id="map"></div>
+  <div class="content">
+    
 </div>
 
 <script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?v=3&key=<%= ENV['GOOGLE_API_KEY'] %>"></script>
 
 <style>
 #map{
-  height: 550px;
+  height: 500px;
   margin: 0 auto;
 }
 </style>
