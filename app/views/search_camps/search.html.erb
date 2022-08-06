@@ -12,10 +12,25 @@
   </div>
   <div id="map"></div>
   <div class="content">
-    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">名称</th>
+          <th scope="col">住所</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @camp_fields %>
+          <%= render partial: 'camp_field', collection: @camp_fields %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?v=3&key=<%= ENV['GOOGLE_API_KEY'] %>"></script>
+<script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?v=3&key=<%= ENV['GOOGLE_API_KEY'] %>&language=ja&region=JP"></script>
 
 <style>
 #map{

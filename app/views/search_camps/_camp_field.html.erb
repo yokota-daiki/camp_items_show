@@ -1,0 +1,8 @@
+<tr>
+  <% if camp_field.image %>
+    <td><%= image_tag camp_field.image, size: '180x180' %></td>
+  <% end %>
+  <td><%= camp_field.name %></td>
+  <td><%= camp_field.address.gsub(/日本、/,"") %></td>
+  <td></td>
+</tr>
