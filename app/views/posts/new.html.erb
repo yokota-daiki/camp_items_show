@@ -48,7 +48,7 @@ var number_of_added_images = $('.added-image').length;
 var submit_button = $('.submit-button');
 var alert_message = $('.alert-warning');
 
-  function previewImage(obj){
+function previewImage(obj){
   $('#preview-delete').show();
   //画像が選択されていれば、プレビューを削除する
   var target_image = $('.each-image-preview');
@@ -60,7 +60,7 @@ var alert_message = $('.alert-warning');
 		var fileReader = new FileReader();
 		fileReader.onload = (function (e) {
       var html = `<div class="col-md-4 each-image-preview">
-                    <img src="${e.target.result}" style="max-width:100%; max-height:750px;">
+                    <img src="${e.target.result}" style="max-width:90%; max-height:500px;">
                   </div>`;
       image_box.append(html);
 		});
@@ -78,4 +78,18 @@ var alert_message = $('.alert-warning');
       submit_button.prop("disabled", false);
     };
 };
+
+  //削除ボタンをクリックすると発火するイベント
+  $(document).on("click", '#preview-delete', function(){
+  var file_field = document.querySelector('input[type=file]');
+  //削除を押されたプレビュー要素を取得
+  var target_image = $('.each-image-preview');
+  //inputタグに入ったファイルを削除
+  $('input[type=file]').val('');
+  //プレビューを削除
+  target_image.remove();
+  $('#preview-delete').hide();
+  alert_message.fadeOut(300);
+  submit_button.prop("disabled", false);
+});
 </script>
