@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :checklists
   resources :items 
   resources :myitems, only: %i[create destroy]
-  get "search_items", to: "search_items#search"
+  get "search_camps",  to: "search_camps#search"
+  get "search_items",  to: "search_items#search"
   get "login",         to: "user_sessions#new"
   post "login",        to: "user_sessions#create"
   delete "logout",     to: "user_sessions#destroy"

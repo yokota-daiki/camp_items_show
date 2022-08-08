@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="content-header">
+    <div class="text-center">
+      <h1>キャンプ場検索</h1>
+      <div class="search-field">
+        <%= form_with url: search_camps_path, method: :get do |f| %>
+          <%= f.text_field :keyword, placeholder: 'キーワード検索' %>
+          <%= f.submit t('defaults.search') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="map"></div>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">名称</th>
+          <th scope="col">住所</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @camp_fields %>
+          <%= render partial: 'camp_field', collection: @camp_fields %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?v=3&key=<%= ENV['GOOGLE_API_KEY'] %>&language=ja&region=JP"></script>
+
+
+<style>
+#map{
+  height: 500px;
+  margin: 0 auto;
+}
+</style>

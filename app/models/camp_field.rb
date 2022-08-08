@@ -1,0 +1,2 @@
+class CampField < ApplicationRecord
+end

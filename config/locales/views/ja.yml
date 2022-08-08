@@ -5,6 +5,7 @@ ja:
     register: '登録'
     post: '投稿'
     create: '作成'
+    search: '検索'
     message:
       require_login: 'ログインしてください'
   users:
