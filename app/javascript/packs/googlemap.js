@@ -20,13 +20,9 @@ function initMap() {
         map: mapInstance,
         position: pos,
         icon: {
-          url: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/camping-71.png",
-          fillColor: "green",
-          origin: new google.maps.Point(0,0),
-          anchor: new google.maps.Point(20,20),
-          fillOpacity: 0.6,
-          scaledSize: new google.maps.Size(30, 30)
-        }
+          url: "/assets/camp_icon2.png",
+          scaledSize: new google.maps.Size(40,40)
+        },
       });
     }
   }
