@@ -21,8 +21,6 @@
               <i class="far fa-images fa-lg"></i>
               <%= f.file_field :image, id: :camp_image, accept: '.jpeg, .jpg, .png', onchange: "previewImage(this);" %>
             </div>
-            <div class="alert alert-warning mt-3" style="display:none;">
-            </div>
             <div class="contain">
               <div class="image_box row" id='image-box__container'></div>
               <p class="btn btn-outline-light" id="preview-delete" style="display: none;">選択をクリア</p>
@@ -39,7 +37,7 @@
 var image_box = $('#image-box__container');
 var number_of_added_images = $('.added-image').length;
 var submit_button = $('.submit-button');
-var alert_message = $('.alert-warning');
+
 
 function previewImage(obj){
   $('#preview-delete').show();
@@ -49,17 +47,14 @@ function previewImage(obj){
   var number_of_add_images = 0;
 
   //選択された画像をプレビューで表示
-	for (i = 0; i < obj.files.length; i++) {
-		var fileReader = new FileReader();
-		fileReader.onload = (function (e) {
-      var html = `<div class="col-md-4 each-image-preview">
-                    <img src="${e.target.result}" style="max-width:90%; max-height:500px;">
-                  </div>`;
-      image_box.append(html);
-		});
-		fileReader.readAsDataURL(obj.files[i]);
-    number_of_add_images += 1;
-	};
+	var fileReader = new FileReader();
+	fileReader.onload = (function (e) {
+    var html = `<div class="col-md-4 each-image-preview">
+                  <img src="${e.target.result}" style="max-width:90%; max-height:500px;">
+                </div>`;
+    image_box.append(html);
+	});
+	fileReader.readAsDataURL(obj.files[0]);
 };
 
   //削除ボタンをクリックすると発火するイベント
@@ -72,7 +67,6 @@ function previewImage(obj){
   //プレビューを削除
   target_image.remove();
   $('#preview-delete').hide();
-  alert_message.fadeOut(300);
   submit_button.prop("disabled", false);
 });
 </script>
