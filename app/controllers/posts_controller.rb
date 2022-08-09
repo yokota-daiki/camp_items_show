@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+  before_action :set_post, only: %i[edit]
+
   def index
     @posts = Post.where(public: true)
   end
@@ -35,4 +36,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:camp_field, :comment, :public, :camped_date, images: [])
   end
+
+  def set_post
+    @post = current_user.posts.find(params[:id])
+  end
+
 end

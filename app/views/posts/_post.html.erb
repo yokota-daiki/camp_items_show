@@ -1,9 +1,12 @@
-<div class="col-lg-6">
+<div class="col-lg-4">
   <div class="card">
-    <div class="card-body">
-      <div class="card-title">
-        <%= post.camp_field %>
-      </div>
+    <% if post.images.present? %>
+      <%= image_tag post.images[0], size: '350x200', class: 'card-img-top' %>
+    <% else %>
+      <%= image_tag 'default_campimage.JPG', size: '350x200', class: 'card-img-top' %>
+    <% end %>
+    <div class="card-img-overlay">        
+      <p style="color: #fff;"><%= post.camp_field %></p>
     </div>
   </div>
 </div>
