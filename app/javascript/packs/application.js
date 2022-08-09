@@ -16,3 +16,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import ('./googlemap')
+import '@fortawesome/fontawesome-free/js/all';

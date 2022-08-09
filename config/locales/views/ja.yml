@@ -31,6 +31,11 @@ ja:
     create:
       success: '投稿しました'
       fail: '投稿に失敗しました'
+    edit:
+      title: '編集'
+    update:
+      success: '編集しました'
+      fail: '編集に失敗しました'
   items:
     index:
       title: 'マイアイテム'

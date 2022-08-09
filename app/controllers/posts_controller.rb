@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[edit]
+  before_action :set_post, only: %i[edit update]
 
   def index
     @posts = Post.where(public: true)
@@ -26,6 +26,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to posts_path, success: t('.success')
+    else
+      flash.now[:danger] = t('.fail')
+      render :edit
+    end
   end
 
   def destroy

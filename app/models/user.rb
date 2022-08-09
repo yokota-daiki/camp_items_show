@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   enum role: { generl: 0, admin: 1 }
 
+  def own?(object)
+    id == object.user_id
+  end
+
   def item_added?(item)
     item_id = Item.find_by(name: item.name)
     myitem_items.include?(item_id)
