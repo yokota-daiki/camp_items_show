@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[edit update]
+  before_action :set_post, only: %i[edit update destroy]
 
   def index
     @posts = current_user.posts.with_attached_images
@@ -35,6 +35,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy!
+    redirect_to posts_path, success: t('.success')
   end
 
   private
@@ -44,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = current_user.posts.find(params[:id])
+    @post = current_user.posts.with_attached_images.find(params[:id])
   end
 
 end

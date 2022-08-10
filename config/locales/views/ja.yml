@@ -8,6 +8,7 @@ ja:
     search: '検索'
     message:
       require_login: 'ログインしてください'
+      delete: '削除しますか'
   users:
     new:
       title: 'ユーザー登録'
@@ -36,6 +37,8 @@ ja:
     update:
       success: '編集しました'
       fail: '編集に失敗しました'
+    destroy:
+      success: '削除しました'
   items:
     index:
       title: 'マイアイテム'
