@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update]
 
   def index
-    @posts = current_user.posts.all
+    @posts = current_user.posts.with_attached_images
   end
 
   def new
