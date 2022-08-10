@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update]
 
   def index
-    @posts = Post.where(public: true)
+    @posts = current_user.posts.all
   end
 
   def new

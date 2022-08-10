@@ -1,0 +1,17 @@
+<div class="col-lg-4">
+  <div class="card">
+    <% if post.images.present? %>
+      <%= image_tag post.images[0], size: '350x330', class: 'card-img-top' %>
+    <% else %>
+      <%= image_tag 'default_campimage.JPG', size: '350x330', class: 'card-img-top' %>
+    <% end %>
+    <div class="card-img-overlay">        
+      <p style="color: #fff;"><%= post.camp_field %></p>
+      <% if current_user.own?(post) %>
+        <%= link_to edit_post_path(post) do %>
+          <i class='fa fa-pen-to-square'></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

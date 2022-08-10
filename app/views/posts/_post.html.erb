@@ -1,17 +1,24 @@
-<div class="col-lg-4">
-  <div class="card">
-    <% if post.images.present? %>
-      <%= image_tag post.images[0], size: '350x200', class: 'card-img-top' %>
-    <% else %>
-      <%= image_tag 'default_campimage.JPG', size: '350x200', class: 'card-img-top' %>
-    <% end %>
-    <div class="card-img-overlay">        
-      <p style="color: #fff;"><%= post.camp_field %></p>
-      <% if current_user.own?(post) %>
-        <%= link_to edit_post_path(post) do %>
-          <i class='fa fa-pen-to-square'></i>
+<div class="col">
+  <div class="card mb-3" style="width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-7">
+        <% if post.images.present? %>
+          <%= image_tag post.images[0], size: '330x260' %>
+        <% else %>
+          <%= image_tag 'default_campimage.JPG', size: '330x260' %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="col-md-5">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.camp_field %></h5>
+          <p class="card-text">
+            <% if post.comment.present? %>
+              <%= post.comment %>
+            <% end %>
+          </p>
+          <p class="card-text"><small class="text-muted"><%= post.camped_date %></small></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

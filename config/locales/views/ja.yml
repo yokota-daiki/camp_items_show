@@ -25,7 +25,7 @@ ja:
       success: 'ログアウトしました'
   posts:
     index:
-      title: 'みんなのキャンプ'
+      title: '私のキャンプ'
     new:
       title: 'キャンプ記録'
     create:
