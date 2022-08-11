@@ -8,6 +8,7 @@ ja:
     search: '検索'
     message:
       require_login: 'ログインしてください'
+      delete: '削除しますか'
   users:
     new:
       title: 'ユーザー登録'
@@ -25,12 +26,19 @@ ja:
       success: 'ログアウトしました'
   posts:
     index:
-      title: 'みんなのキャンプ'
+      title: 'マイキャンプ'
     new:
       title: 'キャンプ記録'
     create:
       success: '投稿しました'
       fail: '投稿に失敗しました'
+    edit:
+      title: '編集'
+    update:
+      success: '編集しました'
+      fail: '編集に失敗しました'
+    destroy:
+      success: '削除しました'
   items:
     index:
       title: 'マイアイテム'

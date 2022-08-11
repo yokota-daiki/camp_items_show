@@ -1,10 +1,18 @@
 <div class="content-header">
   <div class="container-fluid">
-    <h1 class="text-center">CAMPER'sとは</h1>
+    <div class="text-center">
+      <h1>CAMPER'sとは</h1>
+      <p>説明</p>
+    </div>
     <% unless logged_in? %>
       <div class="text-center">
         <%= link_to "ユーザー登録をする", new_user_path%>
       </div>
     <% end %>
+    <div class="content">
+      <div class="row">
+        <%= render partial: 'post', collection: @posts %>
+      </div>
+    </div>
   </div>
 </div>

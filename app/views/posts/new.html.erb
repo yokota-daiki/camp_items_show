@@ -17,12 +17,11 @@
           <%= f.text_area :comment, class: "form-control" %>
         </div>
           <div class="form-group">
-            <div class="preview-box border rounded col-md-12">
-              <%= f.label :images %>
-              <i class="far fa-images fa-lg"></i>
+            <div class="border rounded col-md-12">
+              <%= f.label :images, class:"far fa-image fa-lg"  %>
               <%= f.file_field :images, multiple: true, id: :camp_image, accept: '.jpeg, .jpg, .png', onchange: "previewImage(this);" %>
             </div>
-            <div class="alert alert-warning mt-3" style="display:none;">画像は合計で5枚以下にしてください
+            <div class="alert alert-warning mt-3" style="display:none;">画像は合計で4枚以下にしてください
             </div>
             <div class="contain">
               <div class="image_box row" id='image-box__container'></div>
@@ -35,7 +34,7 @@
           <%= f.radio_button :public, :false %>
           <%= f.label :public, "非公開" %>
         </div>
-        <%= f.submit (t "defaults.post"), class: "btn btn-primary" %>
+        <%= f.submit (t "defaults.post"), class: "btn btn-info rounded-pill" %>
       <% end %>
     </div>
   </div>
