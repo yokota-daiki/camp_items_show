@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="text-center">
       <h1><%= t '.title' %></h1>
-      <%= link_to "キャンプの記録を投稿する", new_post_path %>
+      <%= button_to "キャンプの記録を投稿する", new_post_path, method: :get, class: "btn btn-info rounded-pill", style: "width: 300px" %>
     </div>
   </div>
 </div>
@@ -11,3 +11,44 @@
       <%= render partial: 'post', collection: @posts %>
   </div>
 </div>
+<div id="mask" class="hidden"></div>
+<div id="modal" class="hidden">
+  <p>モーダルウィンドウ</p>
+</div>
+
+<style>
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  position: fixed;  
+  top: 10vh;
+  /* 以下3行：モーダルを左右中央揃えにする方法 */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;   /* transitionでアニメーションを作成 */
+  z-index: 2;   /* マスクより上に重なるようにする */
+  width: 935px;   /* showビューの幅に合わせて設定 */
+}
+
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0) scale(0.8);   /* 大きさ0.8倍から等倍にモーダルが拡大される */
+}
+</style>

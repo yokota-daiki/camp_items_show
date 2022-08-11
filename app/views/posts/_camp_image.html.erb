@@ -1,0 +1,10 @@
+<div class="container">
+  <%= link_to '一覧に戻る', posts_path, class: 'btn btn-info rounded-pill float-right' %>
+  <div class="image_box" style="width: 100%; height:600px;">
+    <% if @post.images.present? %>
+      <%= image_tag @post.images[0], class: "card-img-top card border-dark" %>
+    <% else %>
+      <%= image_tag 'default_campimage.JPG', class: 'card-img-top card border-dark' %>
+    <% end %>
+  </div>
+</div>
