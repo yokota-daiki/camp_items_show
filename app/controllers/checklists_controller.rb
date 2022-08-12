@@ -60,6 +60,6 @@ class ChecklistsController < ApplicationController
   end
 
   def set_myitems
-    @myitems = current_user.myitem_items.with_attached_image.order(created_at: :desc).page(params[:page])
+    @myitems = current_user.myitem_items.with_attached_image
   end
 end
