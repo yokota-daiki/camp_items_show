@@ -1,5 +1,5 @@
 class ChecklistsController < ApplicationController
-  before_action :set_myitems, only: %i[new edit update]
+  before_action :set_myitems, only: %i[new edit]
   before_action :set_checklist, only: %i[edit update destroy]
 
   def new
@@ -31,12 +31,11 @@ class ChecklistsController < ApplicationController
   end
 
   def update
-    @checklist.destroy!
-    checklist = current_user.checklists.new(checklist_params)
-    if checklist.save
+    if @checklist.update(checklist_params)
+      @checklist.checklist_items.destroy_all
       item_ids = params[:checklist_item][:item_id]
       item_ids.each do |id|
-        checklist.checklist_items.create(item_id: id)
+        @checklist.checklist_items.create(item_id: id)
       end
       redirect_to checklists_path, success: t('.success')
     else
