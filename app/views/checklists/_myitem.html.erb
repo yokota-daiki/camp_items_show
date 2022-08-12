@@ -1,8 +1,12 @@
 <tr>
+    <% if myitem.image_url.present? %>
   <td><%= image_tag myitem.image_url %></td>
+    <% elsif myitem.image.present? %>
+  <td><%= image_tag myitem.image, size: '128x128' %>
+    <% end %>
   <td><%= myitem.name %></td>
   <% if @checklist.items.include?(myitem) %>
-    <td><%= check_box_tag('checklist_item[item_id][]', myitem.id,{  }, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
+    <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, {  }, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
   <% else %>
     <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, checked=false, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
   <% end %>
