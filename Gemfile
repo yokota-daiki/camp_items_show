@@ -34,6 +34,7 @@ gem 'enum_help'
 gem 'geocoder'
 gem 'gon'
 gem 'google_places'
+gem 'kaminari'
 gem 'sorcery'
 gem "jquery-rails"
 gem 'net-imap'
