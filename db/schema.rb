@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_05_172604) do
+ActiveRecord::Schema.define(version: 2022_08_13_073236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2022_08_05_172604) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_url"
-    t.string "category"
+    t.integer "category"
     t.index ["name", "url"], name: "index_items_on_name_and_url", unique: true
   end
 
