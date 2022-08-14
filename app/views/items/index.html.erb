@@ -1,15 +1,26 @@
 <div class="container">
   <div class="content-header">
     <div class="text-center">
-      <h1><%= t '.title' %></h1>
-      <%= link_to "アイテムを登録する", search_items_path %>
+      <h1><%= t '.title' %></h1><br>
+      <%= link_to "アイテムを登録する", search_items_path, class: 'btn btn-info rounded-pill', style: "width: 300px" %>
     </div>
-    <div class="content">
-      <div class="row">
+  </div>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
         <% if @items.present? %>
           <%= render partial: 'item', collection: @items %>
         <% end %>
-      </div>
-    </div>
+      </tbody>
+    </table>
   </div>
 </div>

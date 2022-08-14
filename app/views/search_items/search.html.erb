@@ -16,10 +16,21 @@
     </div>
   </div>
   <div class="content">
-    <div class="row">
-      <% if @items.present? %>
+  <% if  @items.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
         <%= render partial: 'item', collection: @items %>
-      <% end %>
-    </div>
+      </tbody>
+    </table>
+  <% end %>
   </div>
 </div>
