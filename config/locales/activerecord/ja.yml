@@ -4,6 +4,21 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    item:
+      category:
+        tent: 'テント・タープ'
+        bedding: 'アウトドア用寝具'
+        furniture: 'チェア・テーブル・レジャーシート'
+        light: 'ライト・ランタン'
+        coolerbox: 'クーラーボックス'
+        jug: 'ウォータージャグ'
+        wagon: 'アウトドアワゴン'
+        stove: 'ストーブ・ヒーター・ウォーマー'
+        cooker: 'バーべキュー・クッキング用品'
+        fuel: '燃料'
+        tableware: 'キャンプ用食器'
+        knife: 'ナイフ'
+        other: 'その他'
     post:
       public:
         true: '公開'
