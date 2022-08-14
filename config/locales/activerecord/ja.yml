@@ -8,17 +8,18 @@ ja:
       category:
         tent: 'テント・タープ'
         bedding: 'アウトドア用寝具'
-        furniture: 'チェア・テーブル・レジャーシート'
-        light: 'ライト・ランタン'
+        furniture: 'チェア・テーブル'
+        light: 'ライト'
         coolerbox: 'クーラーボックス'
         jug: 'ウォータージャグ'
         wagon: 'アウトドアワゴン'
-        stove: 'ストーブ・ヒーター・ウォーマー'
-        cooker: 'バーべキュー・クッキング用品'
+        stove: 'ストーブ'
+        cooker: 'BBQ・クッカー・焚き火台'
         fuel: '燃料'
         tableware: 'キャンプ用食器'
         knife: 'ナイフ'
         other: 'その他'
+        ware: 'ウェア'
     post:
       public:
         true: '公開'
