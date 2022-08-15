@@ -31,12 +31,11 @@ class ChecklistsController < ApplicationController
   end
 
   def update
-    if @checklist.update!(checklist_params)
+    if @checklist.update(checklist_params)
+      @checklist.checklist_items.destroy_all
       item_ids = params[:checklist_item][:item_id]
       item_ids.each do |id|
-        unless @checklist.item_ids.include?(id)
-          @checklist.checklist_items.create(item_id: id)
-        end
+        @checklist.checklist_items.create(item_id: id)
       end
       redirect_to checklists_path, success: t('.success')
     else
@@ -60,6 +59,6 @@ class ChecklistsController < ApplicationController
   end
 
   def set_myitems
-    @myitems = current_user.myitem_items
+    @myitems = current_user.myitem_items.with_attached_image
   end
 end

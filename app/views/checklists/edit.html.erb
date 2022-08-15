@@ -12,6 +12,7 @@
         <tr>
           <th scope="col"></th>
           <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
           <th scope="col"><%= t('defaults.register') %></th>
         </tr>
       </thead>
@@ -19,7 +20,7 @@
         <%= render partial: 'myitem', collection: @myitems, locals: { checklist: @checklist } %>
       </tbody>
     </table>
-      <%= f.submit t('defaults.register'),  class: "btn btn-primary" %>
+      <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill" %>
     <% end %>
   </div>
 </div>

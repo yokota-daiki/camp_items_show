@@ -1,18 +1,13 @@
-<div class="col-lg-4">
-  <div class="card">
-    <div class="card-body">
-      <div class="image-area">
-        <%= image_tag item.image_url %>
-      </div>
-      <%= item.category %></br>
-      <%= item.maker %></br>
-      <%= item.name[0..20] ... %>
-      <div class="menu">
-        <%= link_to "楽天でみる", item.url %>
-        <% unless current_user.item_added?(item) %>  
-          <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), controller: 'search_items', action: 'create', method: :post, name: item %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<tr>
+    <% if item.image_url.present? %>
+  <td><%= image_tag item.image_url %></td>
+    <% elsif item.image.present? %>
+  <td><%= image_tag item.image, size: '128x128' %>
+    <% end %>
+  <td><%= item.name[0..28]... %></td>
+  <td><%= item.category_i18n %></td>
+  <td><%= link_to "楽天でみる", item.url %><br>
+  <% unless current_user.item_added?(item) %> 
+    <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), controller: 'search_items', action: 'create', method: :post, name: item %></td>
+  <% end %>
+</tr>

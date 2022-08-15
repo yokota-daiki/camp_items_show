@@ -1,22 +1,17 @@
-<div class="col-lg-4">
-  <div class="card">
-    <div class="card-body">
-      <div class="image-area">
-        <% if item.image_url.present? %>
-          <%= image_tag item.image_url %>
-        <% elsif item.image.present? %>
-          <%= image_tag item.image, size: '150x130' %>
-        <% end %>
-      </div>
-      <%= item.category %></br>
-      <%= item.maker %></br>
-      <%= item.name[0..20] ... %>
-      <div class="menu">
-        <% if item.url %>
-          <%= link_to "楽天でみる", item.url %>
-        <% end %>
-        <%= link_to "削除", myitem_path(item), controller: 'myitems', method: :delete %>
-      </div>
-    </div>
-  </div>
-</div>
+<tr>
+    <% if item.image_url.present? %>
+  <td><%= image_tag item.image_url %></td>
+    <% elsif item.image.present? %>
+  <td><%= image_tag item.image, size: '128x128' %>
+    <% end %>
+  <% if 28 < item.name.size %>
+  <td><%= item.name[0..28]... %></td>
+    <% else %>
+  <td><%= item.name %></td>
+    <% end %>
+  <td><%= item.category_i18n %></td>
+  <td><%= link_to '削除', myitem_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill' %></td>
+  <% if item.url %>
+  <td><%= link_to "楽天でみる", item.url %></td>
+  <% end %>
+</tr>
