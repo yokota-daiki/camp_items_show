@@ -9,22 +9,35 @@
         </div>
         <div class="info" style="color: white;">
           <%= current_user.name %>
+          <i class="fa-solid fa-user"></i>
         </div>
       </div>
     <% end %>      
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column">
         <li class="nav-item">
-          <%= link_to "キャンプ場検索", search_camps_path,  class: "nav-link" %>
+          <%= link_to search_camps_path,  class: "nav-link" do %>
+            キャンプ場検索
+            <i class="fa-solid fa-camera-retro"></i>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "キャンプ記録", posts_path, class: "nav-link" %>
+          <%= link_to posts_path, class: "nav-link" do %>
+            キャンプ記録
+            <i class="fa-solid fa-campground"></i>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "マイアイテム", items_path, class: "nav-link" %>
+          <%= link_to items_path, class: "nav-link" do %>
+            マイアイテム
+            <i class="fa-solid fa-map-location-dot"></i>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "チェックリスト", checklists_path, class: "nav-link" %>
+          <%= link_to checklists_path, class: "nav-link" do %>
+            チェックリスト
+            <i class="fa-solid fa-signs-post"></i>
+          <% end %>
         </li>
       </ul>
     </nav>

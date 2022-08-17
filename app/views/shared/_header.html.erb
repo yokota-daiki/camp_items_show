@@ -13,7 +13,10 @@
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item">
-        <li><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %>
+        <li><%= link_to logout_path, method: :delete, class: "nav-link" do %>
+          ログアウト
+          <i class="fa-solid fa-right-from-bracket"></i>
+        <% end %>
       </li>
     </ul>
   </nav>
