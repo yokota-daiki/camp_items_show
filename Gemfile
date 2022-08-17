@@ -35,7 +35,6 @@ gem 'geocoder'
 gem 'gon'
 gem 'google_places'
 gem 'sorcery'
-gem "jquery-rails"
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
