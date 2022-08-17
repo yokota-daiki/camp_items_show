@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
           <%= f.label :category %>
-          <%= f.text_field :category, class: "form-control" %>
+          <%= f.select :category, Item.categories_i18n.invert.map{ |item| item }, class: "form-control" %>
         </div>
           <div class="form-group">
             <div class="preview-box border rounded col-md-12">
