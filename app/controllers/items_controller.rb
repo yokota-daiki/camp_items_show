@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = current_user.myitem_items
+    @items = current_user.myitem_items.with_attached_image
   end
 
   def new
@@ -16,6 +16,14 @@ class ItemsController < ApplicationController
     else
       render :search
     end
+  end
+
+  def select_category
+    if params[:category].blank?
+      params[:category] = Item.categories.values
+    end
+    @selected_category = params[:category]
+    @items = current_user.myitem_items.where(category: @selected_category)
   end
 
   private

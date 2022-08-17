@@ -55,6 +55,7 @@ ja:
       success: 'アイテムを登録しました'
       fail: 'アイテムが登録できませんでした'
     destroy:
+      successs: 'アイテムを削除しました'
   checklists:
     index:
       title: 'チェックリスト一覧'

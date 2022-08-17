@@ -11,12 +11,17 @@
         <tr>
           <th scope="col"></th>
           <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
-          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
+          <th scope="col"><%= form_with url: select_category_items_path, class: 'select_form', method: :get, local: false do |f| %>
+                            <div class="d-flex flex-row">
+                              <%= f.select(:category, Item.categories_i18n.invert.map{ |item| item }, include_blank: 'カテゴリーを選択') %>
+                              <%= f.submit 'ソートする', remote: true, class: 'btn rounded-pill' %>
+                            </div>
+                          <% end %></th>
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="item-contents">
         <% if @items.present? %>
           <%= render partial: 'item', collection: @items %>
         <% end %>

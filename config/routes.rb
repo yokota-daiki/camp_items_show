@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create update]
   resources :posts
   resources :checklists
-  resources :items 
+  resources :items do
+    collection do
+      get :select_category
+    end
+  end
   resources :myitems, only: %i[create destroy]
   get "search_camps",  to: "search_camps#search"
   get "search_items",  to: "search_items#search"
