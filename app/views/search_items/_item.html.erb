@@ -8,6 +8,6 @@
   <td><%= item.category_i18n %></td>
   <td><%= link_to "楽天でみる", item.url %><br>
   <% unless current_user.item_added?(item) %> 
-    <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), controller: 'search_items', action: 'create', method: :post, name: item %></td>
+    <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), action: 'create', method: :post, name: item %></td>
   <% end %>
 </tr>

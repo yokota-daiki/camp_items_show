@@ -14,7 +14,7 @@
           <th scope="col"><%= form_with url: select_category_items_path, class: 'select_form', method: :get, local: false do |f| %>
                             <div class="d-flex flex-row">
                               <%= f.select(:category, Item.categories_i18n.invert.map{ |item| item }, include_blank: 'カテゴリーを選択') %>
-                              <%= f.submit 'ソートする', remote: true, class: 'btn rounded-pill' %>
+                              <%= f.submit 'ソートする', remote: true, class: 'btn btn-outline-dark rounded-pill btn-sm' %>
                             </div>
                           <% end %></th>
           <th scope="col"></th>
