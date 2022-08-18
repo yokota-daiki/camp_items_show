@@ -14,17 +14,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   </head>
   <body class="sidebar-mini sidebar-collapse">
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
-    <div class="content-wrapper">
+    <div class="wrapper">
+      <% if logged_in? %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/before_login_header' %>
+      <% end %>
       <%= render 'shared/flash_message' %>
-      <%= yield %>
-
+      <%= render 'shared/sidebar' %>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
     </div>
-    <%= render 'shared/footer' %>
-    <%= render 'shared/sidebar' %>
   </body>
 </html>
