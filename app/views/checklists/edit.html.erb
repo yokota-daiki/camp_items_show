@@ -2,8 +2,8 @@
   <div class="content-header">
     <div class="text-center">
     <%= form_with model: @checklist, local: true do |f| %>
+      <%= render "shared/error_message", object: f.object %>
       <%= f.text_field :name, class: "form-control" %>
-      <div class="form-area"></div>
     </div>
   </div>
   <div class="content">

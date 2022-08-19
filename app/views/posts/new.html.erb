@@ -4,6 +4,7 @@
       <h1><%= t '.title' %></h1>
       
       <%= form_with model: @post, local: true do |f| %>
+        <%= render "shared/error_message", object: f.object %>
         <div class="form-group">
           <%= f.label :camp_field %>
           <%= f.text_field :camp_field, class: "form-control" %>

@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
       current_user.add_myitem(@item)
       redirect_to items_path, success: t('.success')
     else
-      render :search
+      render :new
     end
   end
 
