@@ -9,10 +9,10 @@
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
       </li>
       <li class="nav-item">
-        <li><%= link_to logout_path, method: :delete, class: "nav-link" do %>
+        <li><%= link_to logout_path, method: :delete, class: "nav-link", data: { confirm: t('defaults.message.logout')} do %>
           ログアウト
           <i class="fa-solid fa-right-from-bracket"></i>
         <% end %>

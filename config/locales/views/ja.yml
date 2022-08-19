@@ -10,6 +10,7 @@ ja:
     message:
       require_login: 'ログインしてください'
       delete: '削除しますか'
+      logout: 'ログアウトしますか'
   users:
     new:
       title: 'ユーザー登録'

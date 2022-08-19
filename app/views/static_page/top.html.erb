@@ -1,16 +1,24 @@
 <div class="content-header">
-  <div class="container-fluid">
+  <div class="text-center">
+    <h1>CAMPER'sとは</h1>
+    <p>説明</p>
+  </div>
+  <% unless logged_in? %>
     <div class="text-center">
-      <h1>CAMPER'sとは</h1>
-      <p>説明</p>
+      <%= link_to "ユーザー登録をする", new_user_path%>
     </div>
-    <% unless logged_in? %>
-      <div class="text-center">
-        <%= link_to "ユーザー登録をする", new_user_path%>
-      </div>
+  <% end %>
+</div>
+<div class="container-fluid">
+  <div class="card" style="margin: 25px; padding: 25px;">
+    <div class="text-center">
+      <h2>みんなのキャンプ</h2>
+    </div>
+    <%= link_to  reload_path, remote: true do %>
+      <i class="fa-solid fa-arrow-rotate-right fa-2x float-right" style="color: #5f9ea0;"></i>
     <% end %>
     <div class="content">
-      <div class="row">
+      <div class="row" id="camp-images">
         <%= render partial: 'post', collection: @posts %>
       </div>
     </div>
