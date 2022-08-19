@@ -3,6 +3,8 @@
   <td><%= image_tag myitem.image_url %></td>
     <% elsif myitem.image.present? %>
   <td><%= image_tag myitem.image, size: '128x128' %>
+    <% elsif myitem.image.blank? %>
+  <td><%= image_tag 'default_item_image.png', size: '128x128' %></td>
     <% end %>
     <% if 28 < myitem.name.size %>
   <td><%= myitem.name[0..28]... %></td>
