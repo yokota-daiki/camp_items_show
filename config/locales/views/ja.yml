@@ -6,6 +6,7 @@ ja:
     post: '投稿'
     create: '作成'
     search: '検索'
+    send: '送信'
     message:
       require_login: 'ログインしてください'
       delete: '削除しますか'
@@ -69,5 +70,11 @@ ja:
     update:
       success: 'チェックリストを更新しました'
       fail: 'チェックリストが更新できませんでした'
+  password_resets:
+    create:
+      success: 'メールを送信しました'
+    update:
+      success: 'パスワードを再設定しました'
+      fail: 'パスワードの再設定に失敗しました'
 
 
