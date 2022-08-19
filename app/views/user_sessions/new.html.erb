@@ -15,10 +15,10 @@
           <%= f.label :password_confirmation, User.human_attribute_name('password_confirmation') %>
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <%= f.submit (t "defaults.login"), class: "btn btn-primary" %>
+        <%= f.submit (t "defaults.login"), class: "btn btn-info rounded-pill" %>
+        <%= link_to 'パスワードを忘れた方はこちら', new_password_reset_path, class: 'float-right' %>
       <% end %>
-      <div class='text-center'>
-      </div>
+      <%= link_to 'ユーザー登録はこちら', new_user_path, class: 'float-right' %>
     </div>
   </div>
 </div>
