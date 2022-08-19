@@ -13,10 +13,20 @@
 </div>
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden">
-  <p>モーダルウィンドウ</p>
+    <p>モーダルウィンドウ</p>
 </div>
 
 <style>
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
 
 #mask {
   background-color: rgba(0, 0, 0, 0.5);
@@ -38,7 +48,9 @@
   transform: translate(0, 0) scale(1);
   transition: 0.2s;   /* transitionでアニメーションを作成 */
   z-index: 2;   /* マスクより上に重なるようにする */
-  width: 100%;   /* showビューの幅に合わせて設定 */
+  width: 80%;   /* showビューの幅に合わせて設定 */
+  height: 70%;
+  overflow: scroll;
 }
 
 #mask.hidden {
