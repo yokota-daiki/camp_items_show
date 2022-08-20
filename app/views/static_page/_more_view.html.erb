@@ -1,0 +1,13 @@
+<div class="card" id="camp-image-lists" style="margin-top: 25px; margin-bottom: 0px; padding: 25px; background-color: rgba(255, 255, 255, 0.6);"">
+  <div class="text-center">
+    <h3>みんなのキャンプ</h3>
+  </div>
+  <%= link_to  reload_path, remote: true do %>
+    <i class="fa-solid fa-arrow-rotate-right fa-2x float-right" style="color: #5f9ea0;"></i>
+  <% end %>
+  <div class="content">
+    <div class="row">
+      <%= render partial: 'post', collection: posts %>
+    </div>
+  </div>
+</div>

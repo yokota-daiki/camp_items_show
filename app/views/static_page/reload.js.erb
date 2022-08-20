@@ -1,1 +1,2 @@
-$('#camp-images').html('<%= escape_javascript(render partial: 'post', collection: @posts) %>')
+$('#camp-images').html('<%= escape_javascript(render partial: 'more_view', locals: { posts: @posts }) %>')
+$('#more-view-btn').empty();

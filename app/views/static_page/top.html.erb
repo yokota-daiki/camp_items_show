@@ -1,26 +1,55 @@
-<div class="content-header">
-  <div class="text-center">
-    <h1>CAMPER'sとは</h1>
-    <p>説明</p>
-  </div>
-  <% unless logged_in? %>
-    <div class="text-center">
-      <%= link_to "ユーザー登録をする", new_user_path%>
-    </div>
-  <% end %>
-</div>
-<div class="container-fluid">
-  <div class="card" style="margin: 25px; padding: 25px;">
-    <div class="text-center">
-      <h2>みんなのキャンプ</h2>
-    </div>
-    <%= link_to  reload_path, remote: true do %>
-      <i class="fa-solid fa-arrow-rotate-right fa-2x float-right" style="color: #5f9ea0;"></i>
+<div class="content-header" id="top-page">
+  <div class="text-center"  style="margin-top: 35px; color: black;">
+    <h1>あなたのキャンプをより快適に</h1>
+    <% unless logged_in? %>
+      <div class="text-center">
+        <%= link_to "ユーザー登録をする", new_user_path%>
+      </div>
     <% end %>
-    <div class="content">
-      <div class="row" id="camp-images">
-        <%= render partial: 'post', collection: @posts %>
+    <div class="container d-flex justify-content-lg-between"  style="margin-top: 35px;">
+      <%= link_to search_camps_path do %>
+        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+          <i class="fa-solid fa-map-location-dot fa-4x"></i>
+          <h4>キャンプ場検索</h4>
+        </div>
+      <% end %>
+      <%= link_to items_path do %>
+        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+          <i class="fa-solid fa-campground fa-4x"></i>
+          <h4>アイテム管理</h4>
+        </div>
+      <% end %>
+      <%= link_to checklists_path do %>
+        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+          <i class="fa-solid fa-signs-post fa-4x"></i>
+          <h4>チェックリスト</h4>
+        </div>
+      <% end %>
+      <%= link_to posts_path do %>
+        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+          <i class="fa-solid fa-camera fa-4x"></i>
+          <h4>キャンプ記録</h4>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="more-view-btn">
+      <div class="text-center">
+        <div id="open-btn-area">
+          <div class="btn btn-info" id="open-btn">みんなのキャンプを覗いてみる</div>
+        </div>
       </div>
     </div>
   </div>
+  <div id="camp-images"></div>
 </div>
+<script>
+$("#open-btn").on('click', function(){
+  $('#camp-images').html('<%= escape_javascript(render partial: 'more_view', locals: { posts: @posts }) %>');
+  $('#open-btn').remove();
+});
+</script>
+
+
+
