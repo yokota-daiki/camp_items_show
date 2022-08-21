@@ -20,8 +20,9 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/sidebar' %>
-    <%= render 'shared/flash_message' %>
+    
     <div class="content-wrapper" id="camp-content">
+    <%= render 'shared/flash_message' %>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
