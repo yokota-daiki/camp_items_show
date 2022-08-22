@@ -6,19 +6,24 @@
         <%= link_to "CAMPER's", root_path, class: "nav-link h2" %>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button"><i class="fas fa-bars fa-lg"></i></a>
-      </li>
-      <li class="nav-item">
-        <li><%= link_to login_path, class: "nav-link" do %>
-            ログイン
-            <i class="fa-solid fa-right-to-bracket"></i>
-            <% end %>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav ml-auto">
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </a>
+          <%= render 'shared/sidebar' %>
         </li>
-      </li>
-    </ul>
+        <li class="nav-item">
+          <li><%= link_to login_path, class: "nav-link" do %>
+                ログイン
+                <i class="fa-solid fa-right-to-bracket"></i>
+            <% end %>
+          </li>
+        </li>
+      </ul>
+    </div>
   </nav>  
   <!-- /.navbar -->
 </header>

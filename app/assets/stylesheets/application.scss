@@ -24,6 +24,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   Header {
     position: fixed;
     width: 100%;
+    z-index: 1;
   }
 
   .footer {
