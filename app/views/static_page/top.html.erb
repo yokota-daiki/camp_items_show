@@ -2,42 +2,38 @@
   <div class="text-center"  style="margin-top: 35px; color: black;">
     <h1>あなたのキャンプをより快適に</h1>
     <% unless logged_in? %>
-      <div class="text-center">
-        <%= link_to "ユーザー登録をする", new_user_path%>
+      <%= link_to "ユーザー登録をする", new_user_path%>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-md-around flex-wrap"  style="margin-top: 35px;">
+    <%= link_to search_camps_path do %>
+      <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+        <%= image_tag 'map1.png', style: 'height: 50%; width: 50%' %>
+        <h4>キャンプ場検索</h4>
       </div>
     <% end %>
-    <div class="container d-flex justify-content-lg-between"  style="margin-top: 35px;">
-      <%= link_to search_camps_path do %>
-        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-          <i class="fa-solid fa-map-location-dot fa-4x"></i>
-          <h4>キャンプ場検索</h4>
-        </div>
-      <% end %>
-      <%= link_to items_path do %>
-        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-          <i class="fa-solid fa-campground fa-4x"></i>
-          <h4>アイテム管理</h4>
-        </div>
-      <% end %>
-      <%= link_to checklists_path do %>
-        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-          <i class="fa-solid fa-signs-post fa-4x"></i>
-          <h4>チェックリスト</h4>
-        </div>
-      <% end %>
-      <%= link_to posts_path do %>
-        <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-          <i class="fa-solid fa-camera fa-4x"></i>
-          <h4>キャンプ記録</h4>
-        </div>
-      <% end %>
-    </div>
+    <%= link_to items_path do %>
+      <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+        <%= image_tag 'backpack1.png', style: 'height: 50%; width: 50%' %>
+        <h4>アイテム管理</h4>
+      </div>
+    <% end %>
+    <%= link_to posts_path do %>
+      <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+        <%= image_tag 'camping.png', style: 'height: 50%; width: 50%' %>
+        <h4>キャンプ記録</h4>
+      </div>
+    <% end %>
+    <%= link_to checklists_path do %>
+      <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+        <%= image_tag 'checklist1.png', style: 'height: 50%; width: 50%' %>
+        <h4>チェックリスト</h4>
+      </div>
+    <% end %>
   </div>
   <div class="container-fluid">
-    <div id="more-view-btn">
-      <div class="text-center">
-        <div class="btn btn-info" id="open-btn">みんなのキャンプを覗いてみる</div>
-      </div>
+    <div class="text-center">
+      <div class="btn btn-info" id="open-btn">みんなのキャンプを覗いてみる</div>
     </div>
   </div>
   <div id="camp-images"></div>
