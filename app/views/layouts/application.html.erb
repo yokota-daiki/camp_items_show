@@ -9,23 +9,21 @@
     <%= include_gon(init: true) %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   </head>
-  <body class="sidebar-mini sidebar-collapse">
-    <div class="wrapper">
-      <% if logged_in? %>
-        <%= render 'shared/header' %>
-      <% else %>
-        <%= render 'shared/before_login_header' %>
-      <% end %>
+  <body class="sidebar-collapse">
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>    
+    <div class="content-wrapper" id="camp-content">
       <%= render 'shared/flash_message' %>
-      <%= render 'shared/sidebar' %>
-      <div class="content-wrapper">
-        <%= yield %>
-      </div>
-      <%= render 'shared/footer' %>
+      <%= yield %>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>

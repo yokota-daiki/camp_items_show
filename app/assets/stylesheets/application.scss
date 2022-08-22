@@ -16,3 +16,24 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     width: 100%;
     height: 38px;
   }
+
+  #camp-content {
+    padding-top: 65px;
+  }
+
+  Header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .footer {
+    width:100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #side-bar {
+    position: fixed;
+  }

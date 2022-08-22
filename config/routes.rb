@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: %i[new create edit update]
   resources :myitems, only: %i[create destroy]
+  get "reload",        to: "static_page#reload"
   get "search_camps",  to: "search_camps#search"
   get "search_items",  to: "search_items#search"
   get "login",         to: "user_sessions#new"
