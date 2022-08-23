@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: %i[new create edit update]
   resources :myitems, only: %i[create destroy]
+  namespace :admin do
+    resources :users
+    resources :posts
+  end
   get "reload",        to: "static_page#reload"
   get "terms_of_service", to: "static_page#terms_of_service"
   get "privacy_policy", to: "static_page#privacy_policy"
