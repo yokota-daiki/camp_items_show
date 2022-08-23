@@ -1,14 +1,27 @@
-<footer class="main-footer" style="min-height: 130px; margin-bottom: 0px; background-color: silver">
-  <!-- To the right -->
-  <div class="float-right d-none d-sm-inline">
-    <div>
-      クレジット
-      <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Smashicons - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/backpack" title="backpack icons">Backpack icons created by dDara - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/tent" title="tent icons">Tent icons created by Freepik - Flaticon</a>
+<footer class="main-footer" style="min-height: 130px; margin-bottom: 0px; background-color: silver;">
+    <div class="row" style="padding-top: 10px;">
+      <div class="col-md-6">
+        <%= link_to 'お問い合わせ', "https://forms.gle/mjxemyhtUABCo5xt8", style: 'text-decoration: none; color: gray;' %>
+        <%= link_to '利用規約', terms_of_service_path, style: 'text-decoration: none; color: gray;' %>
+        <%= link_to 'プライバシーポリシー', privacy_policy_path, style: 'text-decoration: none; color: gray;' %>
+      </div>
+      <div class="col-md-6 text-right">
+        <div class="btn-group dropup">
+          <button type="button" class="btn dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false" style="color: silver; height: 30px;">
+            <p style="color: gray;">使用させていただいたアイコン</p>
+          </button>
+          <ul class="dropdown-menu" style="background-color: silver; opacity: 0.8">
+            <small>
+              <li><%= link_to 'Map icons', "https://www.flaticon.com/free-icons/map", title: "map icons" %></li>
+              <li><%= link_to 'List icons', "https://www.flaticon.com/free-icons/list", title: "list icons" %></li>
+              <li><%= link_to 'Backpack icons', "https://www.flaticon.com/free-icons/backpack", title: "backpack icons" %></li>
+              <li><%= link_to 'Tent icons' ,"https://www.flaticon.com/free-icons/tent", title: "tent icons" %></li>
+            </small>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md" style="padding-top: 30px;">
+      Copyright<strong>&copy;</strong> CAMPER's 2022. All rights reserved.
+      </div>
     </div>
-  </div>
-  <!-- Default to the left -->
-  <strong>#<a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
 </footer>
