@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resources :myitems, only: %i[create destroy]
   get "reload",        to: "static_page#reload"
+  get "terms_of_service", to: "static_page#terms_of_service"
+  get "privacy_policy", to: "static_page#privacy_policy"
   get "search_camps",  to: "search_camps#search"
   get "search_items",  to: "search_items#search"
   get "login",         to: "user_sessions#new"
