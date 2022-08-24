@@ -10,7 +10,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user.destroy!
-    redirect_to admin_users_path, success: t('success')
+    redirect_to admin_users_path, success: t('.success')
   end
 
   private
