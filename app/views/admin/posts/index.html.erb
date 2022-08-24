@@ -1,0 +1,13 @@
+<% content_for(:title, t('.title')) %>
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h1><%= t '.title' %></h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <%= render @posts %>
+  </div>
+</div>

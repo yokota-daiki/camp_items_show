@@ -77,5 +77,19 @@ ja:
     update:
       success: 'パスワードを再設定しました'
       fail: 'パスワードの再設定に失敗しました'
+  admin:
+    users:
+      index:
+        title: 'ユーザー一覧'
+      destroy:
+        success: 'ユーザーを削除しました'
+    posts:
+      index: '投稿一覧'
+      destroy:
+        success: '投稿を削除しました'
+    items:
+      index: 'アイテム一覧'
+      destroy:
+        success: 'アイテムを削除しました'
 
 
