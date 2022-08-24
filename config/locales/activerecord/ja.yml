@@ -2,7 +2,7 @@ ja:
   enums:
     user:
       role:
-        general: '一般'
+        generl: '一般'
         admin: '管理者'
     item:
       category:
@@ -36,6 +36,7 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         role: '権限'
+        created_at: '登録日'
       post:
         user_id: 'ユーザー'
         camp_field: '訪れたキャンプ場'
