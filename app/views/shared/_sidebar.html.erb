@@ -1,5 +1,11 @@
 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
   <li>
+    <%= link_to root_path,  class: "nav-link", style: "color: white;" do %>
+      ホーム
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+  </li>
+  <li>
     <%= link_to search_camps_path,  class: "nav-link", style: "color: white;" do %>
       キャンプ場検索
       <i class="fa-solid fa-map-location-dot"></i>
