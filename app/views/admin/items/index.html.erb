@@ -1,2 +1,31 @@
-<h1>Admin::Items#index</h1>
-<p>Find me in app/views/admin/items/index.html.erb</p>
+<% content_for(:title, "t(.title)") %>
+<div class="container">
+  <div class="content-header">
+    <div class="text-center">
+      <h1><%= t '.title' %></h1><br>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= form_with url: select_category_items_path, class: 'select_form', method: :get, local: false do |f| %>
+                            <div class="d-flex flex-row">
+                              <%= f.select :category, (Item.categories_i18n.invert.map{ |item| item }), include_blank: 'カテゴリーを選択' %>
+                              <%= f.submit 'ソートする', remote: true, class: 'btn btn-outline-dark rounded-pill btn-sm' %>
+                            </div>
+                          <% end %></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="item-contents">
+        <% if @items.present? %>
+          <%= render partial: 'item', collection: @items %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
