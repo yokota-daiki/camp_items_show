@@ -1,16 +1,17 @@
-<% content_for(:title, "t(.title)") %>
-<div class="content-header">
-  <div class="container-fluid">
+<% content_for(:title, t(".title")) %>
+<div class="container">
+  <div class="container-header">
     <div class="text-center">
-      <h1><%= t '.title' %></h1>
+      <h1 class="pb-3 pt-2"><%= t '.title' %></h1>
       <%= button_to "キャンプの記録を投稿する", new_post_path, method: :get, class: "btn btn-info rounded-pill", style: "width: 300px" %>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <%= render partial: 'post', collection: @posts %>
+  <div class="content pt-5 pb-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <%= render partial: 'post', collection: @posts %>
+    </div>
   </div>
+  <%= paginate @posts %>
 </div>
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden">

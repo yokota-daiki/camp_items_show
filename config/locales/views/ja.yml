@@ -11,12 +11,17 @@ ja:
       require_login: 'ログインしてください'
       delete: '削除しますか'
       logout: 'ログアウトしますか'
+  static_pag:
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms_of_service:
+      title: '利用規約'
   users:
     new:
       title: 'ユーザー登録'
     create:
-    success: 'ユーザー登録が完了しました'
-    fail: 'ユーザー登録に失敗しました'
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
@@ -30,12 +35,12 @@ ja:
     index:
       title: 'マイキャンプ'
     new:
-      title: 'キャンプ記録'
+      title: 'キャンプの記録'
     create:
       success: '投稿しました'
       fail: '投稿に失敗しました'
     edit:
-      title: '編集'
+      title: 'キャンプの編集'
     update:
       success: '編集しました'
       fail: '編集に失敗しました'
@@ -52,6 +57,9 @@ ja:
   search_items:
     search:
       title: 'アイテム検索'
+  search_camps:
+    search:
+      title: 'キャンプ場検索'
   myitems:
     create:
       success: 'アイテムを登録しました'
@@ -72,6 +80,10 @@ ja:
       success: 'チェックリストを更新しました'
       fail: 'チェックリストが更新できませんでした'
   password_resets:
+    new:
+      title: 'パスワードリセット'
+    edit:
+      title: 'パスワード再登録'
     create:
       success: 'メールを送信しました'
     update:
