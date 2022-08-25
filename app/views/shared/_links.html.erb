@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-md-around flex-wrap mt-2">
   <%= link_to search_camps_path do %>
     <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'map1.png', style: 'height: 50%; width: 50%' %>
+      <%= image_tag 'map1.png',  style: 'height: 50%; width: 50%' %>
       <h4 class="nav-link <%= active_if('search_camps') %> btn">キャンプ場検索</h4>
     </div>
   <% end %>
@@ -13,7 +13,7 @@
   <% end %>
   <%= link_to checklists_path do %>
     <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'checklist1.png', style: 'height: 50%; width: 50%' %>
+      <%= image_tag 'checklist1.png', style: 'height: 50%; width: 50%', class: 'pb-1' %>
       <h4 class="nav-link <%= active_if('checklists') %> btn">チェックリスト</h4>
     </div>
   <% end %>
