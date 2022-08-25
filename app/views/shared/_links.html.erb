@@ -11,16 +11,16 @@
       <h4 class="nav-link <%= active_if('items') %> btn">アイテム管理</h4>
     </div>
   <% end %>
-  <%= link_to posts_path do %>
-    <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'camping.png', style: 'height: 50%; width: 50%' %>
-      <h4 class="nav-link <%= active_if('posts') %> btn">キャンプ記録</h4>
-    </div>
-  <% end %>
   <%= link_to checklists_path do %>
     <div class="btn" style="color: black; margin: 10px; padding: 10px;">
       <%= image_tag 'checklist1.png', style: 'height: 50%; width: 50%' %>
       <h4 class="nav-link <%= active_if('checklists') %> btn">チェックリスト</h4>
+    </div>
+  <% end %>
+  <%= link_to posts_path do %>
+    <div class="btn" style="color: black; margin: 10px; padding: 10px;">
+      <%= image_tag 'camping.png', style: 'height: 50%; width: 50%' %>
+      <h4 class="nav-link <%= active_if('posts') %> btn">キャンプ記録</h4>
     </div>
   <% end %>
 </div>
