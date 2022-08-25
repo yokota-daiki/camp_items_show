@@ -75,10 +75,12 @@ ja:
       success: 'チェックリスト"%{name}"を作成しました'
       fail: 'チェックリストは作成できませんでした'
     edit:
-      title: '%{title}'
+      title: '%{name}の編集'
     update:
       success: 'チェックリストを更新しました'
       fail: 'チェックリストが更新できませんでした'
+    destroy:
+      success: 'チェックリストを削除しました'
   password_resets:
     new:
       title: 'パスワードリセット'

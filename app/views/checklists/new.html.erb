@@ -2,29 +2,32 @@
 <div class="container">
   <div class="content-header">
     <div class="text-center">
-      <h1><%= t '.title' %></h1>
+      <h1 class="py-4"><%= t('.title') %></h1>
+      <%= form_with model: @checklist, local: true do |f| %>
+        <%= render "shared/error_message", object: f.object %>
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control mb-4" %>
+        </div>
     </div>
   </div>
-  <div class="content">
-    <%= form_with model: @checklist, local: true do |f| %>
-      <%= render "shared/error_message", object: f.object %>
+  <div class="content pb-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
+          <th scope="col"><%= t('defaults.register') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'myitem', collection: @myitems %>
+      </tbody>
+    </table>
       <div class="form-group">
-        <%= f.text_field :name, class: 'form-control', placeholder: "チェックリストの名前を記入してください (例) ソロキャンプ 夏" %>
+        <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill float-right" %>
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
-            <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
-            <th scope="col"><%= t('defaults.register') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: 'myitem', collection: @myitems %>
-        </tbody>
-      </table>
-      <%= f.submit (t "defaults.create"), class: "btn btn-info rounded-pill" %>
     <% end %>
   </div>
 </div>
+

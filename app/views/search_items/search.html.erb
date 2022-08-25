@@ -1,13 +1,13 @@
 <% content_for(:title, t(".title")) %>
 <div class="container">
   <div class="content-header">
-    <h1 class="text-center"><%= t '.title' %></h1>
+    <h1 class="text-center pt-4 pb-3"><%= t '.title' %></h1>
     <div class="search-field">
       <%= form_with url: search_items_path, method: :get, local: true do |f| %>
         <div class="text-center">
-          <%= link_to "自分で登録する", new_item_path %>
+          <%= link_to "自分で登録する", new_item_path, class: "btn btn-info rounded-pill ps-5 pe-5" %>
         </div>
-        <div class="input-group">
+        <div class="input-group py-4">
           <%= f.search_field :keyword, class: "form-control", placeholder: "メーカー名 アイテム名で検索" %>
           <div class="input-group-append">
             <%= f.submit "検索", class: "form-control btn btn-success" %>
