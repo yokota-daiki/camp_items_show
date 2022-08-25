@@ -13,8 +13,8 @@
       <% end %>
     </div>
     <div class="card-body">
-      <div class="card-title"><strong><%= post.camp_field %></strong></div>
-      <p class="card-text">
+      <h5><%= post.camp_field %></h5>
+      <p class="card-text pt-3">
         <% if post.comment.present? %>
           <%= post.comment %>
         <% end %>

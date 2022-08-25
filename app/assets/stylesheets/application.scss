@@ -41,3 +41,39 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   #side-bar {
     position: fixed;
   }
+
+  // paginate
+.pagination{
+  margin: auto;
+  padding: 15px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  color: black;
+  
+}
+.pagination span{
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 50px;
+  color: rgb(13, 180, 218);
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  border-radius: 20px;
+}
+.pagination span:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pagination span a:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.page.current {
+  background-color: rgba(252, 207, 242, 0.298);
+}
