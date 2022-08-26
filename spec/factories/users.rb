@@ -4,7 +4,7 @@ FactoryBot.define do
     sequence(:email) { |n| "test#{n}@example.com" }
     password { 'password' }
     password_confirmation { 'password' }
-    role { :generl }
+    role { :general }
   end
 
   trait :admin do
@@ -13,7 +13,7 @@ FactoryBot.define do
   end
 
   trait :generl do
-    sequence(:name, 'generl_1' )
-    role { 'generl' }
+    sequence(:name, 'genearl_1' )
+    role { 'general' }
   end
 end
