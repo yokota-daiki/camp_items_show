@@ -1,30 +1,30 @@
 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
   <li>
-    <%= link_to root_path,  class: "nav-link", style: "color: white;" do %>
+    <%= link_to root_path,  class: "nav-link #{active_if('static_page')}", style: "color: white;" do %>
       ホーム
       <i class="fa-solid fa-house"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to search_camps_path,  class: "nav-link", style: "color: white;" do %>
+    <%= link_to search_camps_path,  class: "nav-link #{active_if('search_camps')}", style: "color: white;" do %>
       キャンプ場検索
       <i class="fa-solid fa-map-location-dot"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to posts_path, class: "nav-link", style: "color: white;" do %>
+    <%= link_to posts_path, class: "nav-link #{active_if('posts')}", style: "color: white;" do %>
       キャンプ記録
       <i class="fa-solid fa-camera"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to items_path, class: "nav-link", style: "color: white;" do %>
+    <%= link_to items_path, class: "nav-link #{active_if('items')}", style: "color: white;" do %>
       マイアイテム
       <i class="fa-solid fa-campground"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to checklists_path, class: "nav-link", style: "color: white;" do %>
+    <%= link_to checklists_path, class: "nav-link #{active_if('checklists')}", style: "color: white;" do %>
       チェックリスト
       <i class="fa-solid fa-list-check"></i>
     <% end %>
@@ -32,19 +32,19 @@
   <% if logged_in? %>
     <% if current_user.admin? %>
       <li>
-        <%= link_to admin_users_path, class: "nav-link", style: "color: white;" do %>
+        <%= link_to admin_users_path, class: "nav-link #{active_if('admin/users')}", style: "color: white;" do %>
           ユーザー一覧
           <i class="fa-solid fa-user-gear"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to admin_posts_path, class: "nav-link", style: "color: white;" do %>
+        <%= link_to admin_posts_path, class: "nav-link #{active_if('admin/posts')}", style: "color: white;" do %>
           投稿一覧
           <i class="fa-solid fa-folder-open"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to admin_items_path, class: "nav-link", style: "color: white;" do %>
+        <%= link_to admin_items_path, class: "nav-link #{active_if('admin/items')}", style: "color: white;" do %>
           アイテム一覧
           <i class="fa-solid fa-tents"></i>
         <% end %>

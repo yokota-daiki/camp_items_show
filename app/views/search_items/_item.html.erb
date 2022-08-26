@@ -6,8 +6,8 @@
     <% end %>
   <td><%= item.name[0..28]... %></td>
   <td><%= item.category_i18n %></td>
-  <td><%= link_to "楽天でみる", item.url %><br>
+  <td><%= link_to "楽天でみる", item.url, style: 'text-decoration: none;' %><br>
   <% unless current_user.item_added?(item) %> 
-    <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), action: 'create', method: :post, name: item %></td>
+    <%= link_to t('defaults.register'), myitems_path(item: {name: item.name, url: item.url, image_url: item.image_url, maker: item.maker, category: item.category, image: item.image}), action: 'create', method: :post, name: item, class: 'btn btn-info rounded-pill px-2 py-1 mt-2' %></td>
   <% end %>
 </tr>

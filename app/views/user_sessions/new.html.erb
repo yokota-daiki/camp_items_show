@@ -1,7 +1,7 @@
 <% content_for(:title, t(".title")) %>
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
       <h1><%= t '.title' %></h1>
       <%= form_with url: login_path, local: true, method: :post do |f| %>
         <div class="form-group">
@@ -19,7 +19,7 @@
         <%= f.submit (t "defaults.login"), class: "btn btn-info rounded-pill" %>
         <%= link_to 'パスワードを忘れた方はこちら', new_password_reset_path, class: 'float-right' %>
       <% end %>
-      <%= link_to 'ユーザー登録はこちら', new_user_path, class: 'float-right' %>
+      <%= link_to 'ユーザー登録はこちら', new_user_path, class: 'float-right mb-4' %>
     </div>
   </div>
 </div>

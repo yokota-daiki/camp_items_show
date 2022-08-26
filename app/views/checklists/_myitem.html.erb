@@ -13,8 +13,8 @@
     <% end %>
   <td><%= myitem.category_i18n %></td>
   <% if @checklist.items.include?(myitem) %>
-    <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, {  }, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
+    <td><%= check_box_tag('[item_id][]', myitem.id, {  }, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
   <% else %>
-    <td><%= check_box_tag('checklist_item[item_id][]', myitem.id, checked=false, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
+    <td><%= check_box_tag('[item_id][]', myitem.id, checked=false, { include_hidden: false , style: 'transform: scale(2)' }) %></td>
   <% end %>
 </tr>

@@ -1,17 +1,20 @@
 <% content_for(:title, t(".title")) %>
+<%= render 'shared/links' %>
 <div class="container">
   <div class="content-header">
     <div class="text-center">
       <h1>キャンプ場検索</h1>
-      <div class="search-field pb-5 pt-3">
+      <div class="search_container m-auto">
         <%= form_with url: search_camps_path, method: :get do |f| %>
-          <%= f.text_field :keyword, placeholder: 'キーワード検索' %>
-          <%= f.submit t('defaults.search') %>
+          <%= f.text_field :keyword, placeholder: 'キーワード検索', size: '25' %>
+          <%= button_tag type: 'submit', class: 'btn btn-default' do %>
+            <i class="fa-solid fa-magnifying-glass fa-lg mb-1"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-  <div id="map"></div>
+  <div id="map" class="card border-dark"></div>
   <div class="content">
     <table class="table">
       <thead>

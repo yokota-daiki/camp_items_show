@@ -1,13 +1,16 @@
-<% content_for(:title, t(".title")) %>
+<% content_for(:title, t(".title", name: @checklist.name)) %>
 <div class="container">
   <div class="content-header">
     <div class="text-center">
-    <%= form_with model: @checklist, local: true do |f| %>
-      <%= render "shared/error_message", object: f.object %>
-      <%= f.text_field :name, class: "form-control" %>
+      <h1 class="py-4"><%= t('.title', name: @checklist.name) %></h1>
+      <%= form_with model: @checklist, local: true do |f| %>
+        <%= render "shared/error_message", object: f.object %>
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control mb-4" %>
+        </div>
     </div>
   </div>
-  <div class="content">
+  <div class="content pb-5">
     <table class="table">
       <thead>
         <tr>
@@ -21,7 +24,9 @@
         <%= render partial: 'myitem', collection: @myitems, locals: { checklist: @checklist } %>
       </tbody>
     </table>
-      <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill" %>
+      <div class="form-group">
+        <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill float-right" %>
+      </div>
     <% end %>
   </div>
 </div>
