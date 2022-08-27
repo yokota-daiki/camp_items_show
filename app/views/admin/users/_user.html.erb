@@ -12,6 +12,9 @@
     <%= l user.created_at %>
   </td>
   <td>
+    <%= link_to edit_admin_user_path(user) do %>
+      <i class="fa-solid fa-pen-to-square fa-lg pe-1" style="color: black; text-decoration: none;"></i>
+    <% end %>
     <%= link_to admin_user_path(user), method: :delete, data: { confirm: t('defaults.message.delete') } do %>
       <i class="fa-solid fa-trash-can fa-lg" style="color: black;"></i>
     <% end %>

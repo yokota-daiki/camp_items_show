@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "static_page#top"
-  resources :users, only: %i[new create update]
+  resources :users, only: %i[new create]
   resources :posts
   resources :checklists
   resources :items do
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resources :myitems, only: %i[create destroy]
   namespace :admin do
-    resources :users, only: %i[index show destroy]
+    resources :users, only: %i[index edit update destroy]
     resources :posts, only: %i[index show destroy]
     resources :items, only: %i[index destroy]
   end
