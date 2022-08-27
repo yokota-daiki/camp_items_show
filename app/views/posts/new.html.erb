@@ -19,10 +19,8 @@
           <%= f.text_area :comment, class: "form-control" %>
         </div>
           <div class="form-group">
-            <div class="border rounded col-md-12">
-              <%= f.label :images, class:"far fa-image fa-lg"  %>
-              <%= f.file_field :images, multiple: true, id: :camp_image, accept: '.jpeg, .jpg, .png', onchange: "previewImage(this);" %>
-            </div>
+            <%= f.label :images %>
+            <%= f.file_field :images, multiple: true, id: :camp_image, accept: '.jpeg, .jpg, .png', onchange: "previewImage(this);" %>            
             <div class="alert alert-warning mt-3" style="display:none;">画像は合計で4枚以下にしてください
             </div>
             <div class="contain">
