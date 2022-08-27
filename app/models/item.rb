@@ -4,8 +4,7 @@ class Item < ApplicationRecord
   has_many :checklist_items, dependent: :destroy
   has_many :checklists, through: :checklist_items, source: :checklist
 
-  validates :name, presence: true, uniqueness: { scope: :url }
-  
+  validates :name, presence: true
 
   has_one_attached :image
 

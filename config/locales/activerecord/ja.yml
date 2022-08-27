@@ -2,7 +2,7 @@ ja:
   enums:
     user:
       role:
-        generl: '一般'
+        general: '一般'
         admin: '管理者'
     item:
       category:

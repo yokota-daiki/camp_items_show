@@ -85,7 +85,7 @@ RSpec.describe "Posts", type: :system do
 
   describe '管理者でログイン' do
     before { login(admin) }
-    fit 'すべての投稿が表示される' do
+    it 'すべての投稿が表示される' do
       visit admin_posts_path
       expect(page).to have_content post.camp_field
       expect(page).to have_content public_post.camp_field
