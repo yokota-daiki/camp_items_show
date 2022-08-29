@@ -7,7 +7,7 @@ ja:
     create: '作成'
     search: '検索'
     send: '送信'
-    update: '更新'
+    change: '変更'
     message:
       require_login: 'ログインしてください'
       delete: '削除しますか'
@@ -98,6 +98,11 @@ ja:
         title: 'ユーザー一覧'
       destroy:
         success: 'ユーザーを削除しました'
+      edit:
+        title: 'ユーザー編集'
+      update:
+        success: '編集しました'
+        fail: '編集できませんでした'
     posts:
       index: 
         title: '投稿一覧'
