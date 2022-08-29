@@ -1,5 +1,6 @@
 let mapInstance
 let marker = []
+let infoWindow = []
 
 function initMap() {
   if (gon.campLat) {
@@ -16,7 +17,7 @@ function initMap() {
         lat: gon.campLat[i],
         lng: gon.campLng[i]
       });
-      marker[i] = new google.maps.Marker({
+      marker[i] = new google.maps.Marker({ //地図にマーカを追加
         map: mapInstance,
         position: pos,
         icon: {
@@ -24,6 +25,11 @@ function initMap() {
           scaledSize: new google.maps.Size(40,40)
         },
       });
+      infoWindow[i] = new google.maps.InfoWindow({ //吹き出しを追加
+        content: `<div>${gon.campname[i]}</div>`
+      });
+
+      markerEvent(i); 
     }
   }
   else{
@@ -35,6 +41,12 @@ function initMap() {
       streetViewControl: false
     });
   }
+}
+
+function markerEvent(i) { //マーカをクリックしたときに吹き出しを表示
+  marker[i].addListener('click', function() {
+    infoWindow[i].open(map, marker[i]);
+  });
 }
 
 
