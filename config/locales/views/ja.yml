@@ -8,6 +8,7 @@ ja:
     search: '検索'
     send: '送信'
     change: '変更'
+    update: '更新'
     message:
       require_login: 'ログインしてください'
       delete: '削除しますか'
