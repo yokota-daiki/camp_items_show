@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :checklist do
-    name { "MyString" }
-    user { nil }
+    name { "test_checklist" }
+    association :user
   end
 end
