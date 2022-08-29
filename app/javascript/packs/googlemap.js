@@ -20,7 +20,7 @@ function initMap() {
         map: mapInstance,
         position: pos,
         icon: {
-          url: "/assets/camp_icon2.png",
+          url: "camp_icon2.png",
           scaledSize: new google.maps.Size(40,40)
         },
       });
