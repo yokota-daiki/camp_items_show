@@ -60,7 +60,7 @@ RSpec.describe "Posts", type: :system do
 
     it '投稿が削除できる' do
       visit posts_path
-      find('.fa-trash-can').click
+      first('.fa-trash-can').click
       expect(page.accept_confirm).to eq '削除しますか'
       expect(page).to have_content '削除しました'
       expect(page).to_not have_content post
