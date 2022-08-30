@@ -16,12 +16,10 @@ class SearchCampsController < ApplicationController
       end
       gon.campLat = @camp_fields.map(&:latitude)
       gon.campLng = @camp_fields.map(&:longitude)
+      gon.campname = @camp_fields.map(&:name)
     else
       render :search
     end
-    #byebug
-    #results = Geocoder.search(params[:keyword])
-    #@latlng = results.first.coordinates
   end
 
   private
