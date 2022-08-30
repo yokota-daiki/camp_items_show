@@ -7,10 +7,10 @@
     </div>
     <div class="col-md-6">
       <div class="card-title mx-auto">
-        <h2 class="py-5 px-3"><%= image_tag 'tent.png' %><%= camp_field.name %></h2>
+        <h2 class="py-5 px-3"><%= image_tag 'tent.png' %>(<%= camp_field_counter + 1 %>)・<%= camp_field.name %></h2>
       </div>
       <div class="card-text">
-        <p class="pb-2"><%= camp_field.address.gsub(/日本、/,"") %></p>
+        <p class="pb-2 px-3"><%= camp_field.address.gsub(/日本、/,"") %></p>
       </div>
     </div>
   </div>
