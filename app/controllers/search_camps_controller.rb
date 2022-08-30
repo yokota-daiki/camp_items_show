@@ -20,9 +20,6 @@ class SearchCampsController < ApplicationController
     else
       render :search
     end
-    #byebug
-    #results = Geocoder.search(params[:keyword])
-    #@latlng = results.first.coordinates
   end
 
   private

@@ -26,7 +26,7 @@ function initMap() {
         },
       });
       infoWindow[i] = new google.maps.InfoWindow({ //吹き出しを追加
-        content: `<div>${gon.campname[i]}</div>`
+        content: `<div>(${[i]})・${gon.campname[i]}</div>`
       });
 
       markerEvent(i); 
