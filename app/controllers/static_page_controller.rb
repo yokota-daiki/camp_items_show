@@ -1,5 +1,5 @@
 class StaticPageController < ApplicationController
-  skip_before_action :require_login, only: %i[top reload]
+  skip_before_action :require_login, only: %i[top reload terms_of_service privacy_policy]
   def top
     @posts = Post.where(public: true).with_attached_images.sample(6)
   end
