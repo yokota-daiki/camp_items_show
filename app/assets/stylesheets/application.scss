@@ -23,12 +23,19 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
   #camp-content {
     padding-top: 65px;
-    background-color: rgb(253, 252, 238);
+    background-color: antiquewhite;
   }
 
   .top-content {
-    background-image: url('top.JPG');
+    background-image: url('background1.jpg');
     background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 100vh;
+  }
+
+  .top-link {
+    background-color: antiquewhite;
   }
 
   Header {
@@ -36,6 +43,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     width: 100%;
     z-index: 1;
   }
+
+  .main-header {
+      background-color: rgba(255, 244, 207, 0);
+      border-color: rgba(255, 255, 255, 0);
+    }
 
   .footer {
     width:100%;
@@ -54,9 +66,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     position: fixed;
   }
 
-  .main-header {
-    background-color: rgb(255, 244, 207);
-  }
+  
 
   .links.btn {
     color: black;
@@ -149,11 +159,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 }
 
 .top-comment {
-  border-radius: 40px;
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  vertical-align: middle;
+  margin: 0 auto;
   color: rgb(0, 0, 0);
+  margin-top: 30vh; 
 }
 
 .link.discription {
@@ -162,4 +172,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   border-color: rgba(0, 0, 0, 0.746);
   border-radius: 15px;
   background-color: rgba(240, 255, 255, 0.681);
+}
+
+//ヘッダー
+.scroll-nav {
+  background-color: rgba(255, 255, 255, 0);
 }
