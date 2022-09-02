@@ -7,4 +7,28 @@ module ApplicationHelper
   def active_if(path)
     path == controller_path ? 'active' : ''
   end
+
+  def default_meta_tags
+    {
+      site: 'CAMPERs',
+      titile: 'CAMPERs',
+      charaset: 'utf-8',
+      description: 'キャンプの忘れ物を防ぐアイテム管理サービスです。自慢のキャンプギアやキャンプの思い出を記録できます。',
+      keywords: 'CAMPERs, キャンプ, キャンプギア, キャンプ忘れ物, キャンプチェックリスト, キャンプ場',
+      canonical: request.original_url,
+      icon: [
+        { href: image_url('tent.png') },
+        { href: image_url('apple_touch_icon.png'), rel: 'apple_touch_icon', sizes: '180x180', type: 'image/png' }
+      ],
+      og: {
+        site_name: :site,
+        title: :title,
+        description: :description,
+        type: 'website',
+        url: request.original_url,
+        image: image_url('ogp_image.png'),
+        locale: 'ja_JP'
+      }
+    }
+  end
 end
