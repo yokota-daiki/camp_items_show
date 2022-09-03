@@ -7,9 +7,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
-@import './item_category.scss';
-@import './pagination.scss';
-@import './search_box.scss';
+@import 'item_category';
+@import 'pagination';
+@import 'search_box';
 
   * {
     font-family: 'Kaisei Decol', serif;
@@ -25,6 +25,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     background-position: center center;
     position: relative;
     height: 100vh;
+    width: 100vw;
   }
 
   Header {
@@ -36,6 +37,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   .main-header {
     background-color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
+  }
+
+  .fa-angle-down{
+    position: absolute;
+    bottom: 0;
+    color: rgb(148, 148, 148);
   }
 
   .footer {
@@ -80,8 +87,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   width: 50vw;
   vertical-align: middle;
   margin: 0 auto;
-  color: rgb(255, 255, 255);
+  color: rgb(227, 227, 227);
   margin-top: 30vh;
+}
+
+.top-discription {
+  font-size: 3em;
 }
 
 .link.discription {
