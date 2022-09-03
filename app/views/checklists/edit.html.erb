@@ -2,7 +2,7 @@
 <div class="container">
   <div class="content-header">
     <div class="text-center">
-      <h1 class="py-4"><%= t('.title', name: @checklist.name) %></h1>
+      <h1 class="title py-4"><%= t('.title', name: @checklist.name) %></h1>
       <%= form_with model: @checklist, local: true do |f| %>
         <%= render "shared/error_message", object: f.object %>
         <div class="form-group">
