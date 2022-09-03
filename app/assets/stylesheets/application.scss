@@ -66,7 +66,7 @@ Header {
 
 .nav-link.btn {
   color: rgb(255, 255, 255);
-  background-color: #d99f00;
+  background-color: #d8ae3a;
   border: 1px solid;
   border-radius: 10px;
   padding-top: 5px;
@@ -76,6 +76,14 @@ Header {
   margin-bottom: 0px;
   margin: 0 auto;
   width: 60%;
+  transition: color .3s;
+  transition: .3s;
+}
+
+.nav-link.btn:hover {
+  color:rgb(93, 93, 93);
+  width: 80%;
+  border-color: #d8ae3a;
 }
 
 //topページテキスト
