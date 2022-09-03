@@ -1,29 +1,29 @@
 <div class="top-content">
-  <div class="content-header">
+  <div class="content-header container-fluid">
     <div class="text-center">
-      <div class="top-comment py-3 mt-3">
-        <p class="top-description mb-0 mt-4">あなたのキャンプをより快適に</p>
-        <div class="description mb-5">
-          <p>年々増えていくキャンプ道具の管理<br>
+      <div class="top-comment">
+        <h1 class="top-description ">あなたのキャンプをより快適に</h1>
+        <div class="description mt-3">
+          <h5>年々増えていくキャンプ道具の管理<br>
           キャンプ場に着いてから忘れ物に気付く<br>
-          そんな経験ありませんか<br></p>
-          <p><strong>煩わしいキャンプライフの悩みを解決します</strong></p>
+          そんな経験ありませんか<br></h5>
+          <h2>煩わしいキャンプライフの悩みを解決します</h2>
         </div>
+        <% unless logged_in? %>
+          <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-info rounded-pill py-0 my-3', style: 'font-size: 22px; text-decoration: none;' %>
+        <% end %>
       </div>
-      <% unless logged_in? %>
-        <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-info rounded-pill py-0 my-3', style: 'font-size: 22px; text-decoration: none;' %>
-      <% end %>
-      <%= render 'shared/top_links' %>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="text-center">
-      <div class="btn btn-light rounded-pill my-5" id="open-btn">みんなのキャンプを覗いてみる</div>
-    </div>
+</div>
+<div class="container-fluid">
+<%= render 'shared/top_links' %>
+  <div class="text-center">
+    <div class="btn btn-light rounded-pill my-5" id="open-btn">みんなのキャンプを覗いてみる</div>
   </div>
-  <div class="container">
-    <div id="camp-images" class="pb-5"></div>
-  </div>
+</div>
+<div class="container">
+  <div id="camp-images" class="pb-5"></div>
 </div>
 
 <script>
