@@ -1,58 +1,40 @@
-<div class="container mt-2">
+<div class="container mt-5">
   <div class="row">
-    <div class="col-3">
+    <div class="col-6 text-center">
       <%= link_to items_path do %>
         <div class="links btn">
-          <%= image_tag 'backpack1.png', style: 'height: 70%; width: 70%' %>
-          <h4 class="nav-link btn">アイテム管理</h4>
+          <%= image_tag 'backpack1.png', class: 'links-img' %>
+          <p class="nav-link btn" id="items"><strong>アイテム管理</strong></p>
         </div>
       <% end %>
+      <div class="link discription"><strong>あなたの所有している<br>キャンプ道具を検索して<br>こちらで管理できます<br></strong></div>
     </div>
-    <div class="col-3">
-      <div class="link discription mt-5 py-3">あなたの所有している<br>
-                                          キャンプ道具を検索して<br>
-                                          こちらで管理しましょう<br>
-      </div>
-    </div>
-    <div class="col-3">
+    <div class="col-6 text-center">
       <%= link_to checklists_path do %>
         <div class="links btn">
-          <%= image_tag 'checklist1.png', style: 'height: 70%; width: 70%', class: 'pb-1 pe-2' %>
-          <h4 class="nav-link btn">チェックリスト</h4>
+          <%= image_tag 'checklist1.png', class: 'links-img pb-1 pe-2' %>
+          <p class="nav-link btn"><strong>チェックリスト</strong></p>
         </div>
       <% end %>
+      <div class="link discription"><strong>キャンプシーンに合わせた<br>キャンプ道具のチェックリストを<br>作成できます</strong></div>
     </div>
-    <div class="col-3">
-      <div class="link discription mt-5 py-2">キャンプシーンに合わせた<br>
-                                          キャンプ道具のチェックリストを<br>
-                                          作成しましょう
-      </div>
-    </div>
-    <div class="col-3">
+    <div class="col-6 text-center pt-5 mt-5">
       <%= link_to search_camps_path do %>
-        <div class="links btn">
-          <%= image_tag 'map1.png',  style: 'height: 70%; width: 70%' %>
-          <h4 class="nav-link btn">キャンプ場検索</h4>
+        <div class="links btn text-center">
+          <%= image_tag 'map1.png', class: 'links-img' %>
+          <p class="nav-link btn"><strong>キャンプ場検索</strong></p>
         </div>
       <% end %>
+      <div class="link discription"><strong>全国のキャンプ場を検索できます<br></strong></div>
     </div>
-    <div class="col-3 mt-5">
-      <div class="link discription mt-5 py-4">全国のキャンプ場を検索できます<br>
-      </div>
-    </div>
-    <div class="col-3">
+    <div class="col-6 text-center pt-5 mt-5">
       <%= link_to posts_path do %>
         <div class="links btn">
-          <%= image_tag 'camping.png', style: 'height: 70%; width: 70%' %>
-          <h4 class="nav-link btn">キャンプ記録</h4>
+          <%= image_tag 'camping.png', class: 'links-img' %>
+          <p class="nav-link btn"><strong>キャンプ記録</strong></p>
         </div>
       <% end %>
-    </div>
-    <div class="col-3 mt-3">
-      <div class="link discription mt-5 py-3">キャンプの思い出や<br>
-                                    自慢のキャンプ道具たちを<br>
-                                    写真に残しましょう
-      </div>
+      <div class="link discription"><strong>キャンプの思い出や<br>自慢のキャンプ道具たちを<br>写真に残せます</strong></div>
     </div>
   </div>
 </div>

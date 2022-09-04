@@ -1,9 +1,9 @@
 <% content_for(:title, t(".title")) %>
 <%= render 'shared/links' %>
 <div class="container">
-  <div class="content-header">
+  <div class="container-header">
     <div class="text-center">
-      <h1>キャンプ場検索</h1>
+      <h1 class="title"><%= t '.title' %></h1>
       <div class="search_container m-auto">
         <%= form_with url: search_camps_path, method: :get do |f| %>
           <%= f.text_field :keyword, placeholder: 'キーワード検索', size: '25' %>
