@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   </head>
   <body class="sidebar-collapse">
+    <%= render 'shared/flash_message' %>  
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
-    <% end %>    
+    <% end %> 
     <div class="content-wrapper" id="camp-content">
-      <%= render 'shared/flash_message' %>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>

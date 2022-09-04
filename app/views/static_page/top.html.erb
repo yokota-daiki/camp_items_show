@@ -1,26 +1,28 @@
 <div class="top-content container-fluid">
   <div class="content-header">
-    <div class="text-center">
-      <div class="top-comment">
-        <p class="top-discription">あなたのキャンプをより快適に</p>
-        <div class="discription mt-3">
-          <h5>年々増えていくキャンプ道具の管理<br>
-          キャンプ場に着いてから忘れ物に気付く<br>
-          そんな経験ありませんか<br></h5>
-          <h2>煩わしいキャンプライフの悩みを解決します</h2>
-        </div>
+    <div class="top-comment">
+      <p class="top-discription">あなたのキャンプをより快適に</p>
+      <p class="discription mt-5">年々増えていくキャンプ道具の管理<br>キャンプ場に着いてから忘れ物に気付く<br>そんな経験ありませんか<br></p>
+      <p class="discription bottom">煩わしいキャンプライフの悩みを解決します</p>
+      <div class="text-center">
         <% unless logged_in? %>
-          <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-info rounded-pill py-0 my-3', style: 'font-size: 22px; text-decoration: none;' %>
+          <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-outline-light rounded-pill py-0 mt-5', style: 'font-size: 22px; text-decoration: none;' %>
         <% end %>
       </div>
+    </div>
+    <div class="text-center">
       <%= link_to '#items' do %>
-        <i class="fa-solid fa-angle-down fa-3x mb-3"></i>
+        <i class="fa-solid fa-angles-down fa-3x mb-3"></i>
       <% end %>
     </div>
   </div>
-  
 </div>
 <div class="container-fluid">
+  <div class="text-center">
+    <div class=" menu text-center mt-4">
+      menu
+    </div>
+  </div>
   <%= render 'shared/top_links' %>
   <div class="text-center">
     <div class="btn my-5" id="open-btn">みんなのキャンプを覗いてみる</div>
@@ -40,7 +42,7 @@ $(function(){
   // #で始まるa要素をクリックした場合に処理
   $('a[href^="#"]').click(function(){
     // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
-    var adjust = 300;
+    var adjust = 330;
     // スクロールの速度（ミリ秒）
     var speed = 400;
     // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
