@@ -26,7 +26,7 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp_image.png'),
+        image: image_url('ogp_image1.jpg'),
         locale: 'ja_JP'
       }
     }
