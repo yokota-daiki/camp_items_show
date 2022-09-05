@@ -11,7 +11,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'CAMPERs GEAR.',
-      titile: 'CAMPERs GEAR.',
+      title: 'CAMPERs GEAR.',
       charaset: 'utf-8',
       description: 'キャンプの忘れ物を防ぐアイテム管理サービスです。自慢のキャンプギアやキャンプの思い出を記録できます。',
       keywords: 'CAMPERs GEAR,CAMP,CAMP GEAR,キャンプ,キャンプギア,キャンプ忘れ物,キャンプチェックリスト,キャンプ場',
@@ -28,6 +28,9 @@ module ApplicationHelper
         url: request.original_url,
         image: image_url('ogp_image1.jpg'),
         locale: 'ja_JP'
+      },
+      twitter: {
+        card: 'summary'
       }
     }
   end
