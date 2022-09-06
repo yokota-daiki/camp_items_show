@@ -17,7 +17,7 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
   #
-  add search_camps_path, :priority => 0.7, :changefreq => 'daily'
+  add search_camps_path, :priority => 0.5, :changefreq => 'weekly'
   #
   # Add all articles:
   #
