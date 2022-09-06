@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "https://www.campers-gear.net/"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -17,7 +17,7 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
   #
-  #   add articles_path, :priority => 0.7, :changefreq => 'daily'
+  add search_camps_path, :priority => 0.7, :changefreq => 'daily'
   #
   # Add all articles:
   #
