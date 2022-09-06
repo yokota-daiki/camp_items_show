@@ -37,4 +37,3 @@ yarn-debug.log*
 node_modules
 .env
 /config/initializers/rack_profile.rb
-public/sitemap.xml.gz
