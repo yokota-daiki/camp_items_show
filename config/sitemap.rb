@@ -1,5 +1,9 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.campers-gear.net/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://campers-gearI.s3.amazonaws.com/"
+SitemapGenerator::Sitemap.public_path = 'public/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
