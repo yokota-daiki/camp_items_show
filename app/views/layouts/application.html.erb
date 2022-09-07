@@ -13,9 +13,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <% if Rails.env.production? %>
-      <%= render 'layouts/google_analytics' %>
-    <% end %>
+    <%= render 'layouts/google_analytics' if Rails.env.production? %>
   </head>
   <body class="sidebar-collapse">
     <%= render 'shared/flash_message' %>  
