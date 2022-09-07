@@ -11,22 +11,26 @@
     </div>
   </div>
   <div class="content pb-5">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
-          <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
-          <th scope="col"><%= t('defaults.register') %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render partial: 'myitem', collection: @myitems %>
-      </tbody>
-    </table>
-      <div class="form-group">
-        <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill float-right" %>
-      </div>
+    <% if @myitems.present? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+            <th scope="col"><%= t(Item.human_attribute_name(:category)) %></th>
+            <th scope="col"><%= t('defaults.register') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'myitem', collection: @myitems %>
+        </tbody>
+      </table>
+        <div class="form-group">
+          <%= f.submit t('defaults.register'),  class: "btn btn-info rounded-pill float-right" %>
+        </div>
+      <% else %>
+        <h4 class="no-items">マイアイテムが存在しません...<br>アイテム登録は<%= link_to 'こちら', search_items_path %></h4>
+      <% end %>
     <% end %>
   </div>
 </div>
