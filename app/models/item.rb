@@ -11,5 +11,5 @@ class Item < ApplicationRecord
   enum category: { tent: 'テント・タープ', bedding: 'アウトドア用寝具', furniture: 'チェア・テーブル・レジャーシート',
                    light: 'ライト・ランタン', coolerbox: 'クーラーボックス', jug: 'ウォータージャグ', wagon: 'アウトドアワゴン',
                    stove: 'ストーブ・ヒーター・ウォーマー', cooker: 'バーべキュー・クッキング用品', fuel: '燃料',
-                   tableware: 'キャンプ用食器', knife: 'ナイフ・マルチツール', other: 'その他', ware: 'ウェア' }
+                   tableware: 'キャンプ用食器', knife: 'ナイフ・マルチツール', other: 'その他', ware: 'ウェア', bag: 'バッグ' }
 end
