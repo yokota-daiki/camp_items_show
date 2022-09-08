@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'static_page#top'
   resources :users, only: %i[new create]
-  resources :posts
-  resources :checklists
-  resources :items do
+  resources :posts, only: %i[index new create edit update destroy]
+  resources :checklists, only: %i[index new create edit update destroy]
+  resources :items, only: %i[index new create] do
     collection do
       get :select_category
     end
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :myitems, only: %i[create destroy]
   namespace :admin do
     resources :users, only: %i[index edit update destroy]
-    resources :posts, only: %i[index show destroy]
+    resources :posts, only: %i[index destroy]
     resources :items, only: %i[index destroy]
   end
   get 'reload', to: 'static_page#reload'

@@ -16,7 +16,7 @@ class ChecklistsController < ApplicationController
       end
     end
     redirect_to checklists_path, success: t('.success', name: checklist.name)
-  rescue StandardError => e
+    rescue StandardError => e
     redirect_to new_checklist_path, danger: t('.fail')
   end
 
@@ -36,7 +36,7 @@ class ChecklistsController < ApplicationController
       end
     end
     redirect_to checklists_path, success: t('.success')
-  rescue StandardError => e
+    rescue StandardError => e
     redirect_to edit_checklist_path(@checklist), danger: t('.fail')
   end
 
