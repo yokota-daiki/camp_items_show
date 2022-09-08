@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :checklist_item do
-    association :checklist 
+    association :checklist
     association :item
   end
 end

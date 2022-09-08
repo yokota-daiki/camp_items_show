@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "SearchCamps", type: :system do
-
+RSpec.describe 'SearchCamps', type: :system do
   describe 'キャンプ場検索ページへ遷移' do
     context 'キャンプ場検索' do
       fit '正常に検索できる' do

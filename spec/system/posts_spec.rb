@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :system do
+RSpec.describe 'Posts', type: :system do
   let(:general) { create(:user, :general) }
   let(:admin) { create(:user, :admin) }
   let!(:post) { create(:post, user: general) }
   let!(:public_post) { create(:post, :public, user: general) }
   let!(:private_post) { create(:post, :private, user: general) }
-  
+
   describe '一般ユーザーでログイン' do
     before { login(general) }
     context 'フォームすべて入力' do
@@ -17,7 +17,7 @@ RSpec.describe "Posts", type: :system do
         fill_in 'コメント', with: 'テスト'
       end
       it '画像を選択し新規投稿が正常にできる' do
-        attach_file('post[images][]', "spec/fixtures/images/test_image.JPG")
+        attach_file('post[images][]', 'spec/fixtures/images/test_image.JPG')
         choose 'post_public_true'
         click_button '投稿'
         expect(current_path).to eq posts_path
@@ -34,7 +34,7 @@ RSpec.describe "Posts", type: :system do
         expect(current_path).to eq posts_path
         expect(page).to have_content '投稿しました'
         expect(page).to have_selector("img[src$='default_campimage-feb561964ad9a2d1ec9a7d742051579ea2bfdc8222b1e48c41ae5d41c841bc13.JPG']")
-      end 
+      end
     end
 
     context 'フォームが未入力' do

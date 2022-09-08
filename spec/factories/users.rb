@@ -13,7 +13,7 @@ FactoryBot.define do
   end
 
   trait :generl do
-    sequence(:name, 'genearl_1' )
+    sequence(:name, 'genearl_1')
     role { 'general' }
   end
 end

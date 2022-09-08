@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   def index
     @items = current_user.myitem_items.with_attached_image
   end
@@ -20,9 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def select_category
-    if params[:category].blank?
-      params[:category] = Item.categories.values
-    end
+    params[:category] = Item.categories.values if params[:category].blank?
     @selected_category = params[:category]
     @items = current_user.myitem_items.where(category: @selected_category)
   end

@@ -15,21 +15,16 @@ class ChecklistsController < ApplicationController
         checklist.checklist_items.create(item_id: id)
       end
     end
-      redirect_to checklists_path, success: t('.success', name: checklist.name)
-    rescue => e
-      redirect_to new_checklist_path, danger: t('.fail')
+    redirect_to checklists_path, success: t('.success', name: checklist.name)
+  rescue StandardError => e
+    redirect_to new_checklist_path, danger: t('.fail')
   end
 
   def index
     @checklists = current_user.checklists.order(created_at: :asc)
   end
 
-  def show
-    
-  end
-
-  def edit 
-  end
+  def edit; end
 
   def update
     Checklist.transaction do
@@ -40,9 +35,9 @@ class ChecklistsController < ApplicationController
         @checklist.checklist_items.create(item_id: id)
       end
     end
-      redirect_to checklists_path, success: t('.success')
-    rescue => e
-      redirect_to edit_checklist_path(@checklist), danger: t('.fail')
+    redirect_to checklists_path, success: t('.success')
+  rescue StandardError => e
+    redirect_to edit_checklist_path(@checklist), danger: t('.fail')
   end
 
   def destroy
