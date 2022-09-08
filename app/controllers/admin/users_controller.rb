@@ -1,11 +1,11 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_user, only: %i[destroy edit update] 
+  before_action :set_user, only: %i[destroy edit update]
 
   def index
     @users = User.order(created_at: :desc).page(params[:page])
   end
 
-  def edit;end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -22,7 +22,7 @@ class Admin::UsersController < Admin::BaseController
   end
 
   private
-  
+
   def set_user
     @user = User.find(params[:id])
   end

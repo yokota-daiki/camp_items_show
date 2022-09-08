@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Checklists", type: :system do
+RSpec.describe 'Checklists', type: :system do
   let!(:user) { create(:user) }
   let!(:item_1) { create(:item) }
-  let!(:myitem_1) { create(:myitem, user: user, item: item_1) }
+  let!(:myitem_1) { create(:myitem, user:, item: item_1) }
   let!(:item_2) { create(:item) }
-  let!(:myitem_2) { create(:myitem, user: user, item: item_2) }
-  let!(:checklist) { create(:checklist, user: user) }
-  let!(:checklist_item_1) { create(:checklist_item, checklist: checklist, item: item_1) }
-  let!(:checklist_item_2) { create(:checklist_item, checklist: checklist, item: item_2) }
+  let!(:myitem_2) { create(:myitem, user:, item: item_2) }
+  let!(:checklist) { create(:checklist, user:) }
+  let!(:checklist_item_1) { create(:checklist_item, checklist:, item: item_1) }
+  let!(:checklist_item_2) { create(:checklist_item, checklist:, item: item_2) }
   before { login(user) }
 
   describe 'チェックリスト新規作成ページへ遷移' do
@@ -78,5 +78,4 @@ RSpec.describe "Checklists", type: :system do
       end
     end
   end
-
 end

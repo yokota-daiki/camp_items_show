@@ -19,11 +19,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update(post_params)
@@ -48,5 +44,4 @@ class PostsController < ApplicationController
   def set_post
     @post = current_user.posts.with_attached_images.find(params[:id])
   end
-
 end

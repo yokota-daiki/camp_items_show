@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UserSessions", type: :system do
+RSpec.describe 'UserSessions', type: :system do
   let(:general) { create(:user, :general) }
   let(:admin) { create(:user, :admin) }
 
@@ -20,7 +20,7 @@ RSpec.describe "UserSessions", type: :system do
     context 'フォーム未入力' do
       it 'ログインができない' do
         visit login_path
-        fill_in 'メールアドレス', with: ""
+        fill_in 'メールアドレス', with: ''
         fill_in 'パスワード', with: ''
         fill_in 'パスワード確認', with: ''
         click_button 'ログイン'

@@ -5,9 +5,6 @@ class Admin::PostsController < Admin::BaseController
     @posts = Post.includes(:user).with_attached_images.order(created_at: :desc).page(params[:page])
   end
 
-  def show
-  end
-
   def destroy
     @post.destroy!
     redirect_to admin_posts_path, success: t('.success')
