@@ -20,6 +20,7 @@ ja:
         knife: 'ナイフ'
         other: 'その他'
         ware: 'ウェア'
+        bag: 'バッグ'
     post:
       public:
         true: '公開'
