@@ -21,8 +21,6 @@ class PostsController < ApplicationController
 
   def edit; end
 
-  def show; end
-
   def update
     if @post.update(post_params)
       redirect_to posts_path, success: t('.success')

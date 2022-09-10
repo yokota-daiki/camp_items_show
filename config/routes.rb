@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static_page#top'
   resources :users, only: %i[new create]
-  resources :posts
+  resources :posts, only: %i[index new create edit update destroy]
   resources :checklists, only: %i[index new create edit update destroy]
   resources :items, only: %i[index new create] do
     collection do
