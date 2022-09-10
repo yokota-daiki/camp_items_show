@@ -4,7 +4,7 @@ var mask =  document.getElementById('mask');
 modal.innerHTML = '<%= escape_javascript(render partial: 'camp_image', local: { post: @post }) %>';
 modal.classList.remove('hidden');
 mask.classList.remove('hidden');
-mask.on('click', function() {
+mask.click(function() {
   modal.classList.add('hidden');
   mask.classList.add('hidden');
 });

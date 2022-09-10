@@ -13,6 +13,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="//unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <%= render 'layouts/google_analytics' if Rails.env.production? %>
   </head>
   <body class="sidebar-collapse">
@@ -26,5 +27,7 @@
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
+    <script src="//unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <%= javascript_pack_tag "swiper/swiper.js" %>
   </body>
 </html>

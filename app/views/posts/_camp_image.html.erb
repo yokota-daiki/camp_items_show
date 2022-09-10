@@ -2,9 +2,16 @@
   <%= link_to posts_path, class: 'btn btn-light rounded-pill float-right' do %>
     <i class="fa-solid fa-delete-left"></i>
   <% end %>
-  <div class="row">
-    <% @post.images.each do |image| %>
-      <%= image_tag image, class: 'col-lg-6 card-img-top card border-dark' %>
-    <% end %>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <% @post.images.each do |image| %>
+        <div class="swiper-slide">
+          <%= image_tag image, class: 'camp-img col-lg-6 card-img-top card border-dark' %>
+        </div>
+      <% end %>
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </div>
