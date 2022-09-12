@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[edit update destroy show]
+  before_action :set_post, only: %i[edit update destroy]
 
   def index
     @posts = current_user.posts.with_attached_images.order(created_at: :desc).page(params[:page]).per(10)

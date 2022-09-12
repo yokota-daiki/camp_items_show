@@ -1,0 +1,61 @@
+.top-comment {
+  height: 50vh;
+  width: 50%;
+  margin: 0 auto;
+  color: rgb(227, 227, 227);
+  margin-top: 30vh;
+  font-family: 'Kaisei Decol', serif;
+}
+
+.top-discription {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.discription {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.discription.bottom {
+  font-size: 1.8rem;
+}
+
+.fa-angles-down{
+  position: absolute;
+  bottom: 0;
+  color: rgb(148, 148, 148);
+}
+
+.menu {
+  font-size: 2.8rem;
+  font-family: 'Kaisei Decol', serif;
+  color: #734338;
+  margin: 0 auto;
+  width: 350px;
+}
+
+.menu:after {
+  border-radius: 2.5px;
+  background-color: #734338;
+  content: "";
+  display: block;
+  height: 5px;
+}
+
+#open-btn {
+  background-color: #d99f00;
+  color: white;
+}
+
+#camp-image-lists {
+  margin-top: 25px; 
+  margin-bottom: 0px; 
+  padding: 25px; 
+  background-color: #d1b15745;
+}
+
+.camp-fields-name {
+  font-size: 1.2em;
+  font-family: 'Kaisei Decol', serif;
+}
