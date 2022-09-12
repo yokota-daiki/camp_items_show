@@ -1,9 +1,14 @@
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
   loop: true,
-  // Navigation arrows
+  spaceBetween: 30,
+  effect: "fade",
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: 'bullets',
+    clickable: true,
   },
 });
