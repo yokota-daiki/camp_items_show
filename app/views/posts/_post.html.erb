@@ -1,6 +1,6 @@
 <div class="col-lg-6">
   <div class="card border-dark mb-3" style="width: 100%; height:600px;">
-    <% if post.images.present? %>
+    <% if post.images.present? && post.images.many? %>
       <div class="swiper" style="height: 65%;">
         <div class="swiper-wrapper">
           <% post.images.each do |image| %>
@@ -13,13 +13,17 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
       </div>
+    <% elsif post.images.present? && post.images.one? %>
+      <%= image_tag post.images[0], class: "card-img-top card border-dark", style: 'height: 65%; display: block;' %>
     <% else %>
       <%= image_tag 'default_campimage.JPG', class: 'card-img-top card border-dark', style: 'height: 65%;' %>
     <% end %>
     <div class="card-body camp-fields">
       <h5><%= post.camp_field %></h5>
       <p class="card-text pt-3">
-        <% if post.comment.present? %>
+        <% if post.comment.present? && post.comment_over? %>
+          <%= post.comment[0..72]... %>
+        <% elsif post.comment.present? %>
           <%= post.comment %>
         <% end %>
       </p>

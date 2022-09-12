@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   validates :public, inclusion: [true, false]
 
   has_many_attached :images
+
+  def comment_over?
+    self.comment.length > 70
+  end
 end
