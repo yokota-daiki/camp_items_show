@@ -1,7 +1,7 @@
 <div class="col-lg-4">
   <div class="card border-dark">
-    <div class="card-header py-0 my-0" style="height: 1.5em; background-color: #d1b15745; color: black;">        
-      <p class="camp-fields"><%= post.camp_field %></p>
+    <div class="card-header py-0" style="height: 1.7em; background-color: #d1b15745; color: black;">        
+      <p class="camp-fields-name my-0"><%= post.camp_field %></p>
     </div>
     <% if post.images.present? && post.images.many? %>
       <div class="swiper">
@@ -12,9 +12,9 @@
             </div>
           <% end %>
         </div>
-        <div class="swiper-button-next" id="swiper-btn"></div>
-        <div class="swiper-button-prev" id="swiper-btn"></div>
-        <div class="swiper-pagination" id="swiper-btn"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
     <% elsif post.images.present? && post.images.one? %>
       <%= image_tag post.images[0], size: '350x330', class: 'card-img-top' %>
