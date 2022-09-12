@@ -1,12 +1,28 @@
 <div class="col-lg-4">
-  <div class="card">
-    <% if post.images.present? %>
+  <div class="card border-dark">
+    <div class="card-header py-0 my-0" style="height: 1.5em; background-color: #d1b15745; color: black;">        
+      <p class="camp-fields"><%= post.camp_field %></p>
+    </div>
+    <% if post.images.present? && post.images.many? %>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <% post.images.each do |image| %>
+            <div class="swiper-slide">
+              <%= image_tag image, size: '350x330', class: 'card-img-top' %>
+            </div>
+          <% end %>
+        </div>
+        <div class="swiper-button-next" id="swiper-btn"></div>
+        <div class="swiper-button-prev" id="swiper-btn"></div>
+        <div class="swiper-pagination" id="swiper-btn"></div>
+      </div>
+    <% elsif post.images.present? && post.images.one? %>
       <%= image_tag post.images[0], size: '350x330', class: 'card-img-top' %>
     <% else %>
       <%= image_tag 'default_campimage.JPG', size: '350x330', class: 'card-img-top' %>
     <% end %>
-    <div class="card-img-overlay">        
-      <p style="color: #fff;"><%= post.camp_field %></p>
-    </div>
   </div>
 </div>
+
+<script src="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<%= javascript_pack_tag "swiper/swiper.js" %>
