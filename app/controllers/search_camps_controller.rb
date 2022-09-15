@@ -7,7 +7,7 @@ class SearchCampsController < ApplicationController
 
     if keyword.present?
       client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
-      results = client.spots_by_query(keyword, language: 'ja', types: 'campground')
+      results = client.spots_by_query(keyword, lat: 35.392, lng: 139.442, language: 'ja', types: 'campground', region: 'ja')
 
       results.each do |result|
         camp_field = CampField.new(read(result))
