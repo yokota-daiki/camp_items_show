@@ -6,39 +6,11 @@ class ChecklistsController < ApplicationController
     @checklist = current_user.checklists.new
   end
 
-  def create
-    checklist = current_user.checklists.new(checklist_params)
-    item_ids = params[:item_id]
-    Checklist.transaction do
-      checklist.save
-      item_ids.each do |id|
-        checklist.checklist_items.create(item_id: id)
-      end
-    end
-    redirect_to checklists_path, success: t('.success', name: checklist.name)
-    rescue StandardError => e
-    redirect_to new_checklist_path, danger: t('.fail')
-  end
-
   def index
     @checklists = current_user.checklists.order(created_at: :asc)
   end
 
   def edit; end
-
-  def update
-    Checklist.transaction do
-      @checklist.update!(checklist_params)
-      @checklist.checklist_items.destroy_all
-      item_ids = params[:item_id]
-      item_ids.each do |id|
-        @checklist.checklist_items.create(item_id: id)
-      end
-    end
-    redirect_to checklists_path, success: t('.success')
-    rescue StandardError => e
-    redirect_to edit_checklist_path(@checklist), danger: t('.fail')
-  end
 
   def destroy
     @checklist.destroy!
@@ -57,5 +29,33 @@ class ChecklistsController < ApplicationController
 
   def set_myitems
     @myitems = current_user.myitem_items.with_attached_image
+  end
+
+  def create
+    checklist = current_user.checklists.new(checklist_params)
+    item_ids = params[:item_id]
+    Checklist.transaction do
+      checklist.save
+      item_ids.each do |id|
+        checklist.checklist_items.create(item_id: id)
+      end
+    end
+    redirect_to checklists_path, success: t('.success', name: checklist.name)
+    rescue StandardError => e
+    redirect_to new_checklist_path, danger: t('.fail')
+  end
+
+  def update
+    Checklist.transaction do
+      @checklist.update!(checklist_params)
+      @checklist.checklist_items.destroy_all
+      item_ids = params[:item_id]
+      item_ids.each do |id|
+        @checklist.checklist_items.create(item_id: id)
+      end
+    end
+    redirect_to checklists_path, success: t('.success')
+    rescue StandardError => e
+    redirect_to edit_checklist_path(@checklist), danger: t('.fail')
   end
 end
