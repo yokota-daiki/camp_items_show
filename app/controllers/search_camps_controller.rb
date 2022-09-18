@@ -2,16 +2,14 @@ class SearchCampsController < ApplicationController
   skip_before_action :require_login
 
   def search
-    @camp_fields = []
     keyword = params[:keyword]
 
     if keyword.present?
       client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
       results = client.spots_by_query(keyword, lat: 35.392, lng: 139.442, language: 'ja', types: 'campground', region: 'ja')
 
-      results.each do |result|
+      @camp_fields = results.map do |result|
         camp_field = CampField.new(read(result))
-        @camp_fields << camp_field
       end
       gon.campLat = @camp_fields.map(&:latitude)
       gon.campLng = @camp_fields.map(&:longitude)
