@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   has_many_attached :images
 
   def comment_over?
-    self.comment.length > 70
+    self.comment.length > 60
   end
 end
