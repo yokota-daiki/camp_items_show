@@ -104,3 +104,21 @@ Header {
 .camp-img {
   margin: 0 auto;
 }
+
+@media (max-width: 425px) {
+  .nav-link.btn {
+    color: rgb(255, 255, 255);
+    background-color: #d8ae3a;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    width: 100%;
+    transition: color .3s;
+    transition: .3s;
+  }
+}
