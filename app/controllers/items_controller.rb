@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = current_user.myitem_items.with_attached_image
+    @items = current_user.myitem_items.with_attached_image.order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def new
