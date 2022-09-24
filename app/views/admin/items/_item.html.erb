@@ -12,9 +12,9 @@
   <td><%= item.name %></td>
     <% end %>
   <td><%= item.category_i18n %></td>
-  <td><%= link_to '削除', admin_item_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill' %></td>
+  <td><%= link_to '削除', admin_item_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill px-2' %>
   <% if item.url %>
-  <td><%= link_to item.url, style: 'text-decoration: none; color: black;' do %>
+      <%= link_to item.url, style: 'text-decoration: none; color: black;' do %>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
         楽天でみる
       <% end %></td>
