@@ -1,20 +1,20 @@
 <tr>
     <% if item.image_url.present? %>
-  <td><%= image_tag item.image_url %></td>
+  <td><%= image_tag item.image_url, class: 'item-image' %></td>
     <% elsif item.image.present? %>
-  <td><%= image_tag item.image, size: '128x128' %>
+  <td><%= image_tag item.image, class: 'item-image' %>
     <% elsif item.image.blank? %>
-  <td><%= image_tag 'default_item_image.png', size: '128x128' %></td>
+  <td></td>
     <% end %>
-  <% if 28 < item.name.size %>
-  <td><%= item.name[0..28]... %></td>
+  <% if 20 < item.name.size %>
+  <td><%= item.name[0..20]... %></td>
     <% else %>
   <td><%= item.name %></td>
     <% end %>
   <td><%= item.category_i18n %></td>
-  <td><%= link_to '削除', myitem_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill' %></td>
+  <td><%= link_to '削除', myitem_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill' %><br>
   <% if item.url %>
-  <td><%= link_to item.url, style: 'text-decoration: none; color: black;' do %>
+    <%= link_to item.url, style: 'text-decoration: none; color: black;' do %>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
         楽天でみる
       <% end %></td>

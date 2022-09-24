@@ -7,16 +7,16 @@
       <%= link_to "アイテムを登録する", search_items_path, class: 'btn btn-info rounded-pill mt-3', style: "width: 300px" %>
     </div>
   </div>
-  <div class="content">
+  <div class="content mt-3">
     <table class="table mb-0">
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col">アイテム</th>
           <th scope="col"><%= form_with url: select_category_items_path, class: 'select_form', method: :get, local: false do |f| %>
                             <div class="d-flex flex-row">
                               <%= f.select :category, (Item.categories_i18n.invert.map{ |item| item }), include_blank: 'カテゴリーを選択' %>
-                              <%= f.submit 'ソートする', remote: true, class: 'btn btn-outline-dark rounded-pill btn-sm' %>
+                              <%= f.submit 'ソート', remote: true, class: 'btn btn-outline-dark rounded-pill btn-sm' %>
                             </div>
                           <% end %></th>
           <th scope="col"></th>
