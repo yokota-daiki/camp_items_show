@@ -16,7 +16,7 @@ class SearchItemsController < ApplicationController
         parent_category.parents[2]['genreName'] if parent_category.parents[2].present? # 親のジャンルを取得
       end
 
-      @items = @results.zip(categories) do |result, category|
+      @items = @results.zip(categories).map do |result, category|
         item = Item.new(read(result, category))
       end
     end
