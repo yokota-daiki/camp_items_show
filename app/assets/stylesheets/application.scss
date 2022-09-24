@@ -60,6 +60,11 @@ Header {
   color: black;
 }
 
+img.icon-btn {
+  height: 40%;
+  width: 40%;
+}
+
 .links-img {
   height: 75%;
   width: 75%;
@@ -103,4 +108,48 @@ Header {
 
 .camp-img {
   margin: 0 auto;
+}
+
+@media (max-width: 425px) {
+  .top.nav-link.btn {
+    color: rgb(255, 255, 255);
+    background-color: #d8ae3a;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    width: 100%;
+    transition: color .3s;
+    transition: .3s;
+  }
+
+  .nav-link.btn {
+    color: rgb(255, 255, 255);
+    background-color: #d8ae3a;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    width: 50%;
+    font-size: 0.8rem;
+  }
+
+  .nav-link.btn:hover {
+    color:rgb(93, 93, 93);
+    width: 55%;
+    border-color: #d8ae3a;
+  }
+
+  .nav-links {
+    width: 210px;
+    padding-top: 10px;
+  }
 }

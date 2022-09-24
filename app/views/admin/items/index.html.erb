@@ -3,7 +3,7 @@
 <div class="container">
   <div class="content-header">
     <div class="text-center">
-      <h1><%= t '.title' %></h1><br>
+      <h1 class="mt-5"><%= t '.title' %></h1><br>
     </div>
   </div>
   <div class="content">
@@ -11,7 +11,7 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col"><%= t(Item.human_attribute_name(:name)) %></th>
+          <th scope="col">アイテム</th>
           <th scope="col"><%= form_with url: select_category_items_path, class: 'select_form', method: :get, local: false do |f| %>
                             <div class="d-flex flex-row">
                               <%= f.select :category, (Item.categories_i18n.invert.map{ |item| item }), include_blank: 'カテゴリーを選択' %>

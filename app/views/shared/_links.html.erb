@@ -1,26 +1,26 @@
 <div class="d-flex justify-content-md-center flex-wrap pt-5">
-  <%= link_to search_camps_path do %>
-    <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'map1.png',  style: 'height: 40%; width: 40%' %>
-      <h4 class="nav-link btn">キャンプ場検索</h4>
+  <%= link_to search_camps_path, { class: 'nav-links' } do %>
+    <div class="btn">
+      <%= image_tag 'map1.png', class: 'icon-btn' %>
+      <p class="nav-link btn">キャンプ場検索</p>
     </div>
   <% end %>
-  <%= link_to items_path do %>
-    <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'backpack1.png', style: 'height: 40%; width: 40%' %>
-      <h4 class="nav-link btn">アイテム管理</h4>
+  <%= link_to items_path, { class: 'nav-links' } do %>
+    <div class="btn">
+      <%= image_tag 'backpack1.png', class: 'icon-btn' %>
+      <p class="nav-link btn">アイテム管理</p>
     </div>
   <% end %>
-  <%= link_to checklists_path do %>
-    <div class="btn" style="color: black; margin: 10px; padding: 10px;">
-      <%= image_tag 'checklist1.png', style: 'height: 40%; width: 40%', class: 'pb-1' %>
-      <h4 class="nav-link btn">チェックリスト</h4>
+  <%= link_to checklists_path, { class: 'nav-links' } do %>
+    <div class="btn">
+      <%= image_tag 'checklist1.png', class: 'icon-btn pb-1' %>
+      <p class="nav-link btn">チェックリスト</p>
     </div>
   <% end %>
-  <%= link_to posts_path do %>
-    <div class="btn" style="color: black; margin: 15px; padding: 10px;">
-      <%= image_tag 'camping.png', style: 'height: 40%; width: 40%' %>
-      <h4 class="nav-link btn">キャンプ記録</h4>
+  <%= link_to posts_path, { class: 'nav-links' } do %>
+    <div class="btn">
+      <%= image_tag 'camping.png', class: 'icon-btn' %>
+      <p class="nav-link btn">キャンプ記録</p>
     </div>
   <% end %>
 </div>

@@ -59,3 +59,26 @@
   font-size: 1.2em;
   font-family: 'Kaisei Decol', serif;
 }
+
+@media (max-width: 425px) {
+  .top-comment {
+    height: 50vh;
+    width: 100%;
+    color: rgb(227, 227, 227);
+    margin-top: 20vh;
+    font-family: 'Kaisei Decol', serif;
+  }
+
+  .top-discription {
+    text-align: center;
+    font-size: 1.7rem; 
+  }
+
+  .discription.bottom {
+    font-size: 1.7rem;
+  }
+
+  .link.discription {
+    font-size: 1rem;
+  }
+}

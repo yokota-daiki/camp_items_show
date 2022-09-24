@@ -1,13 +1,13 @@
 <tr>
     <% if item.image_url.present? %>
-  <td><%= image_tag item.image_url %></td>
+  <td><%= image_tag item.image_url, class: 'item-image' %></td>
     <% elsif item.image.present? %>
-  <td><%= image_tag item.image, size: '128x128' %>
+  <td><%= image_tag item.image, class: 'item-image' %>
     <% elsif item.image.blank? %>
-  <td><%= image_tag 'default_item_image.png', size: '128x128' %></td>
+  <td></td>
     <% end %>
-  <% if 28 < item.name.size %>
-  <td><%= item.name[0..28]... %></td>
+  <% if 20 < item.name.size %>
+  <td><%= item.name[0..20]... %></td>
     <% else %>
   <td><%= item.name %></td>
     <% end %>
