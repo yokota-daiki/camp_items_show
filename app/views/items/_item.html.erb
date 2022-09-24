@@ -12,7 +12,7 @@
   <td><%= item.name %></td>
     <% end %>
   <td><%= item.category_i18n %></td>
-  <td><%= link_to '削除', myitem_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill' %><br>
+  <td><%= link_to '削除', myitem_path(item), controller: 'myitems', method: :delete, data: { confirm: t('defaults.message.delete') }, class: 'btn btn-info rounded-pill px-1' %><br>
   <% if item.url %>
     <%= link_to item.url, style: 'text-decoration: none; color: black;' do %>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
