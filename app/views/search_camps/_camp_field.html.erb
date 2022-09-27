@@ -11,6 +11,10 @@
       </div>
       <div class="card-text">
         <p class="pb-2 px-3"><%= camp_field.address.gsub(/日本、/,"") %></p>
+        <%= link_to "https://www.google.com/maps/search/?api=1&query=#{camp_field.name}", target: :_blank, rel: "noopener noreferrer", class: 'px-3', style: 'color: black' do %>
+          <i class="fa-solid fa-earth-americas"></i>
+          Google Mapで表示する
+        <% end %>
       </div>
     </div>
   </div>
