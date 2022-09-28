@@ -1,0 +1,3 @@
+class BookmarkCampsController < ApplicationController
+
+end
