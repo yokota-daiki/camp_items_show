@@ -21,6 +21,12 @@
     <% else %>
       <%= image_tag 'default_campimage.JPG', size: '350x330', class: 'card-img-top' %>
     <% end %>
+    <div class="card-body py-2">
+      <%= link_to "https://www.google.com/maps/search/?api=1&query=#{post.camp_field}", target: :_blank, rel: "noopener noreferrer", class: 'px-3', style: 'color: black' do %>
+        <i class="fa-solid fa-earth-americas"></i>
+        Google Mapで表示する
+      <% end %>
+    </div>
   </div>
 </div>
 
