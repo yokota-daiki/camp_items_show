@@ -6,8 +6,9 @@ class BookmarkCampsController < ApplicationController
   end
 
   def destroy
-    @camp_field = current_user.bookmark_camps.find(params[:id]).camp_field
-    current_user.delete_bookmark(@camp_field)
+    camp_field = current_user.bookmark_camps.find(params[:id]).camp_field
+    current_user.delete_bookmark(camp_field)
+    redirect_to bookmark_camps_path, success: t('.success')
   end
 
   def index

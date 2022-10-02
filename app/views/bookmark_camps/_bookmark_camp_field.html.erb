@@ -15,6 +15,9 @@
           <i class="fa-solid fa-earth-americas"></i>
           Google Mapで表示する
         <% end %>
+        <%= link_to bookmark_camp_path(bookmark_camp_field.bookmark_camps.find { |b| b.user_id == current_user.id }), method: :delete do %>
+          <i class="fa-solid fa-trash-can fa-lg" style="color: black;"></i>
+        <% end %>
       </div>
     </div>
   </div>

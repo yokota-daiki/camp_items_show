@@ -96,6 +96,8 @@ ja:
   bookmark_camps:
     index:
       title: '行きたいキャンプ場リスト'
+    destroy:
+      success: '削除しました'
   admin:
     users:
       index:

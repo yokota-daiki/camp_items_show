@@ -12,8 +12,10 @@
           <% end %>
         <% end %>
       </div>
-      <div class="bookmark-camps">
-        <%= link_to '行きたいキャンプ場リスト', bookmark_camps_path %>
+      <div class="bookmark-camps py-3">
+        <%= link_to bookmark_camps_path, style: 'color: black;' do %>
+          <h4><i class="fa-regular fa-flag"></i>行きたいキャンプ場リスト</h4>
+        <% end %>
       </div>
     </div>
   </div>
