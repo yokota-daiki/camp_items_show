@@ -1,1 +1,1 @@
-$('#js-bookmark-btn-<%= @camp_field.name %>').replaceWith("<%= j(render "search_camps/unbookmark_camp", camp_field: @camp_field ) %>");
+$('#js-bookmark-btn-<%= @camp_field.name %>').replaceWith(`<i class="fa-solid fa-flag fa-lg"></i>`);
