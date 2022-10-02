@@ -11,6 +11,7 @@ class BookmarkCampsController < ApplicationController
   end
 
   def index
+    @bookmark_camps_fields = current_user.bookmark_camp_field
   end
 
   private
