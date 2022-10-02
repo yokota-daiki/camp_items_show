@@ -1,0 +1,5 @@
+<% if current_user.bookmark?(camp_field) %>
+  <i class="fa-solid fa-flag fa-lg"></i>
+<% else %>
+  <%= render 'bookmark_camp', { camp_field: camp_field } %>
+<% end %>

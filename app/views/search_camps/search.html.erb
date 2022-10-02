@@ -12,13 +12,14 @@
           <% end %>
         <% end %>
       </div>
+      <div class="bookmark-camps">
+        <%= link_to '行きたいキャンプ場リスト', bookmark_camps_path %>
+      </div>
     </div>
   </div>
   <div id="map" class="card border-dark mt-3"></div>
   <div class="content mx-auto pt-3">
-    <% if @camp_fields %>
-      <%= render partial: 'camp_field', collection: @camp_fields %>
-    <% end %>
+    <%= render partial: 'camp_field', collection: @camp_fields %>
   </div>
 </div>
 

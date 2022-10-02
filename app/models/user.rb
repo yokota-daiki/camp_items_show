@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :posts,      dependent: :destroy
-  has_many :checklists, dependent: :destroy
-  has_many :myitems,    dependent: :destroy
-  has_many :myitem_items, through: :myitems, source: :item
+  has_many :posts,          dependent: :destroy
+  has_many :checklists,     dependent: :destroy
+  has_many :myitems,        dependent: :destroy
+  has_many :myitem_items,        through: :myitems, source: :item
+  has_many :bookmark_camps, dependent: :destroy
+  has_many :bookmark_camp_field, through: :bookmark_camps, source: :camp_field
+
 
   validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -29,5 +32,18 @@ class User < ApplicationRecord
 
   def delete_myitem(item)
     myitems.delete(item)
+  end
+
+  def bookmark?(camp_field)
+    camp_field_id = CampField.find_by(name: camp_field.name)
+    bookmark_camp_field.include?(camp_field_id)
+  end
+
+  def add_bookmark(camp_field)
+    bookmark_camp_field << camp_field
+  end
+
+  def delete_bookmark(camp_field)
+    bookmark_camp_field.delete(camp_field)
   end
 end
