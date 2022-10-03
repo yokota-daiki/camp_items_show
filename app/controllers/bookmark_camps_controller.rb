@@ -12,7 +12,7 @@ class BookmarkCampsController < ApplicationController
   end
 
   def index
-    @bookmark_camps_fields = current_user.bookmark_camp_field.includes([:bookmark_camps])
+    @bookmark_camps_fields = current_user.bookmark_camp_field.includes([:bookmark_camps]).order(created_at: :desc).page(params[:page]).per(7)
   end
 
   private
