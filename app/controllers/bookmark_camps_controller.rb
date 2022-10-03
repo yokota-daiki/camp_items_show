@@ -12,7 +12,7 @@ class BookmarkCampsController < ApplicationController
   end
 
   def index
-    @bookmark_camps_fields = current_user.bookmark_camp_field
+    @bookmark_camps_fields = current_user.bookmark_camp_field.includes([:bookmark_camps])
   end
 
   private
