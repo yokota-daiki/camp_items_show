@@ -100,11 +100,12 @@ img.icon-btn {
 .camp-fields {
   font-family: 'Kaisei Decol', serif;
 }
-
+//キャンプ場行きたいリスト
 .bookmark-camps {
   font-family: 'Kaisei Decol', serif;
-  margin-right: 420px;
-  margin-left: 420px;
+  font-size: 1.3rem;
+  margin-right: 400px;
+  margin-left: 400px;
 }
 
 //checklistページ
@@ -163,4 +164,11 @@ img.icon-btn {
     padding-left: 0px;
     padding-right: 0px;
   }
+  //行きたいキャンプ場リスト
+  .bookmark-camps {
+    font-family: 'Kaisei Decol', serif;
+    font-size: large;
+    width: 100%;
+  }
+  
 }
