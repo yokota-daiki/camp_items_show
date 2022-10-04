@@ -58,7 +58,7 @@ RSpec.describe 'Items', type: :system do
     it 'アイテムのソートができる' do
       visit items_path
       select 'テント・タープ'
-      click_on 'ソートする'
+      click_on 'ソート'
       within('.item-contents') do
         expect(page).to have_content 'テント・タープ'
         expect(page).to_not have_content 'ライト・ランタン'
@@ -72,7 +72,7 @@ RSpec.describe 'Items', type: :system do
       expect(current_path).to eq items_path
       expect(page).to have_content 'アイテムを削除しました'
       within('.item-contents') do
-        expect(page).to_not have_content 'テント・タープ'
+        expect(page).to_not have_content 'ライト・ランタン'
       end
     end
   end
