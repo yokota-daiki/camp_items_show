@@ -1,0 +1,11 @@
+<% content_for(:title, t(".title")) %>
+<%= render 'shared/links' %>
+<div class="container">
+  <div class="text-center">
+    <h1 class="title"><%= t '.title' %></h1>
+  </div>
+  <div class="content mx-auto pt-3">
+      <%= render partial: 'bookmark_camp_field', collection: @bookmark_camps_fields %>
+  </div>
+  <%= paginate @bookmark_camps_fields %>
+</div>

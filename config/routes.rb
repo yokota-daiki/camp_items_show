@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: %i[new create edit update]
   resources :myitems, only: %i[create destroy]
+  resources :bookmark_camps, only: %i[create destroy index]
   namespace :admin do
     resources :users, only: %i[index edit update destroy]
     resources :posts, only: %i[index destroy]

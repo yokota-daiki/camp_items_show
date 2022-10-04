@@ -93,6 +93,11 @@ ja:
     update:
       success: 'パスワードを再設定しました'
       fail: 'パスワードの再設定に失敗しました'
+  bookmark_camps:
+    index:
+      title: '行きたいキャンプ場リスト'
+    destroy:
+      success: '削除しました'
   admin:
     users:
       index:

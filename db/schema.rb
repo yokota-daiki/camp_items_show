@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_18_160435) do
+ActiveRecord::Schema.define(version: 2022_09_28_064438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2022_08_18_160435) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bookmark_camps", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "camp_field_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["camp_field_id"], name: "index_bookmark_camps_on_camp_field_id"
+    t.index ["user_id", "camp_field_id"], name: "index_bookmark_camps_on_user_id_and_camp_field_id", unique: true
+    t.index ["user_id"], name: "index_bookmark_camps_on_user_id"
   end
 
   create_table "camp_fields", force: :cascade do |t|
@@ -121,6 +131,8 @@ ActiveRecord::Schema.define(version: 2022_08_18_160435) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookmark_camps", "camp_fields"
+  add_foreign_key "bookmark_camps", "users"
   add_foreign_key "checklist_items", "checklists"
   add_foreign_key "checklist_items", "items"
   add_foreign_key "checklists", "users"

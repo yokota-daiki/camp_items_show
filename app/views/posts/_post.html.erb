@@ -28,7 +28,13 @@
         <% end %>
       </p>
     </div>
-    <div class="card-footer" style="height: 50px;">
+    <div class="post-camp card-footer px-1" style="height: 50px;">
+      <div class="float-left">
+        <%= link_to "https://www.google.com/maps/search/?api=1&query=#{post.camp_field}", target: :_blank, rel: "noopener noreferrer", style: 'color: black' do %>
+          <small><i class="fa-solid fa-earth-americas"></i>
+          GoogleMapで表示</small>
+        <% end %>
+      </div>
       <div class="float-right">
         <div class="d-flex lex-row mb-3">
           <div class="p-2">

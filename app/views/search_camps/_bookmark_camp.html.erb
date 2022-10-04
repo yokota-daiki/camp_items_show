@@ -1,0 +1,7 @@
+<div id="js-bookmark-btn-<%= camp_field.name %>">  
+  <%= link_to bookmark_camps_path(camp_field: { name: camp_field.name, latitude: camp_field.latitude, longitude: camp_field.longitude, address: camp_field.address, image: camp_field.image }), 
+                                  method: :post, remote: true, class: 'px-3', style: 'color: black' do %>
+    <i class="fa-regular fa-flag fa-lg"></i>
+    行きたいリストに追加する
+  <% end %>
+</div>
