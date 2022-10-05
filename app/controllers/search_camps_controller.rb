@@ -9,7 +9,7 @@ class SearchCampsController < ApplicationController
       results = client.spots_by_query(keyword, lat: 35.392, lng: 139.442, language: 'ja', types: 'campground', region: 'ja')
 
       @camp_fields = results.map do |result|
-        camp_field = CampField.new(read(result))
+        CampField.new(read(result))
       end
       gon.campLat = @camp_fields.map(&:latitude)
       gon.campLng = @camp_fields.map(&:longitude)
