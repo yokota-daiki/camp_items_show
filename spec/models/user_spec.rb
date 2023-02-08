@@ -48,7 +48,7 @@ RSpec.describe User, type: :model do
     expect(user.errors.full_messages).to include("パスワードは8文字以上で入力してください", "パスワード確認を入力してください")
   end
 
-  fit 'emailが既に存在している場合無効である' do
+  it 'emailが既に存在している場合無効である' do
     User.create(
       name: "test_name1",
       email: "test_email@example.com",
