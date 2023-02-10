@@ -24,4 +24,15 @@ RSpec.describe Post, type: :model do
     post.valid?
     expect(post.errors.full_messages).to include("訪れたキャンプ場を入力してください", "日付を入力してください")
   end
+
+  it 'userが存在していないと無効である' do
+    post = Post.new(
+      user: nil,
+      camp_field: "test_camp_field",
+      comment: "test_comment",
+      camped_date: "002022-07-15"
+    )
+
+    expect(post).to be_invalid
+  end
 end
