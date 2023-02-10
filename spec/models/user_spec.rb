@@ -66,4 +66,28 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors.full_messages).to include("メールアドレスはすでに存在します")
   end
+
+  it 'passwordが8文字未満の場合無効である' do
+    user = User.new(
+      name: "test_name",
+      email: "test@example.com",
+      password: "1" * 7,
+      password_confirmation: "1" * 7
+    )
+
+    expect(user).to be_invalid
+    expect(user.errors[:password]).to include("は8文字以上で入力してください")
+  end
+
+  it 'nameが256文字以上の場合無効である' do
+    user = User.new(
+      name: "1" * 256,
+      email: "test@example.com",
+      password: "password",
+      password_confirmation: "password"
+    )
+
+    expect(user).to be_invalid
+    expect(user.errors[:name]).to include("は255文字以内で入力してください")
+  end
 end
