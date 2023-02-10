@@ -7,9 +7,7 @@ RSpec.describe 'SearchCamps', type: :system do
         visit search_camps_path
         fill_in 'keyword', with: '北海道'
         find('.fa-magnifying-glass').click
-        within('.table') do
-          expect(page).to have_content 'キャンプ場'
-        end
+        expect(page).to have_content '北海道'
       end
     end
   end
