@@ -25,6 +25,7 @@
   position: absolute;
   bottom: 0;
   color: rgb(148, 148, 148);
+  animation: arrowmove 1s ease-in-out infinite;
 }
 
 .menu {
@@ -58,6 +59,12 @@
 .camp-fields-name {
   font-size: 1.2em;
   font-family: 'Kaisei Decol', serif;
+}
+
+@keyframes arrowmove{
+  0%{bottom:1%;}
+  50%{bottom:3%;}
+  100%{bottom:1%;}
 }
 
 @media (max-width: 425px) {
