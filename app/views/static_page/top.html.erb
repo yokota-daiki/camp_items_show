@@ -2,11 +2,12 @@
   <div class="content-header">
     <div class="top-comment">
       <p class="top-discription">あなたのキャンプをより快適に</p>
-      <p class="discription mt-5">年々増えていくキャンプ道具の管理<br>キャンプ場に着いてから忘れ物に気付く<br>そんな経験ありませんか<br></p>
+      <p class="discription mt-3">年々増えていくキャンプ道具の管理<br>キャンプ場に着いてから忘れ物に気付く<br>そんな経験ありませんか<br></p>
       <p class="discription bottom">煩わしいキャンプライフの悩みを解決します</p>
       <div class="text-center">
         <% unless logged_in? %>
-          <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-outline-light rounded-pill py-0', style: 'font-size: 22px; text-decoration: none;' %>
+          <%= link_to "ユーザー登録をする", new_user_path, class: 'btn btn-outline-light rounded-pill py-0 mr-2', style: 'font-size: 22px; text-decoration: none;' %>
+          <%= link_to "ゲストでログインする", '/guest_login', method: :post, data: { confirm: 'ゲストユーザーでログインしますか'}, class: 'btn btn-outline-light rounded-pill py-0 ml-2', style: 'font-size: 22px; text-decoration: none;' %>
         <% end %>
       </div>
     </div>

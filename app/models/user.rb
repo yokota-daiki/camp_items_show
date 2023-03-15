@@ -46,4 +46,8 @@ class User < ApplicationRecord
   def delete_bookmark(camp_field)
     bookmark_camp_field.delete(camp_field)
   end
+
+  def guest?
+    name == "ゲストユーザー"
+  end
 end
