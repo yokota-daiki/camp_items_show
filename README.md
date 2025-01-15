@@ -1,7 +1,7 @@
 # CAMPERs GEAR.
 
 [![Image from Gyazo](https://i.gyazo.com/9df84a8e91a1e15c7ffe0472ecf735f4.jpg)](https://gyazo.com/9df84a8e91a1e15c7ffe0472ecf735f4)
-【サービスURL】 https://www.campers-gear.net/
+【サービスURL】 ~~https://www.campers-gear.net/~~ (クローズ)
 
 ## ■　サービス概要
   忘れ物の多いキャンプユーザーのためにキャンプグッズを管理したり，
